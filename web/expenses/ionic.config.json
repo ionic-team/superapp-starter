@@ -1,0 +1,7 @@
+{
+  "name": "expenses",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}

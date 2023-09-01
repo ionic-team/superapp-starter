@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-avatar>
+        <img alt="Employee's picture" [src]="employee.images.large" />
+      </ion-avatar>
+      <ion-card-title>
+        {{ employee.firstName }} {{ employee.lastName }}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h2>{{employee.department}}, {{ employee.title }}</h2>
+      <h3>{{ employee.office }}</h3>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-icon name="call" slot="start"></ion-icon>
+      <ion-label>{{employee.contact.phone}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="phone-portrait" slot="start"></ion-icon>
+      <ion-label>{{employee.contact.cell}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="mail" slot="start"></ion-icon>
+      <ion-label>{{employee.contact.email}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

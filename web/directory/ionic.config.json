@@ -1,0 +1,7 @@
+{
+  "name": "directory",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

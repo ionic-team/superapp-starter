@@ -1,0 +1,24 @@
+ion-card {
+  background: transparent;
+  box-shadow: none;
+
+  ion-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+  }
+
+  ion-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

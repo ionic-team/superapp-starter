@@ -1,0 +1,14 @@
+<ion-item
+  *ngIf="employee"
+  [routerLink]="'/employee/' + employee.id"
+  [detail]="false"
+>
+  <ion-avatar slot="start">
+    <img alt="Employee's picture" [src]="employee.images.thumbnail" />
+  </ion-avatar>
+  <ion-label class="ion-text-wrap">
+    <h2>{{ employee.firstName }} {{ employee.lastName }}</h2>
+    <h3>{{ employee.title }}</h3>
+    <p>{{ employee.office }}</p>
+  </ion-label>
+</ion-item>
