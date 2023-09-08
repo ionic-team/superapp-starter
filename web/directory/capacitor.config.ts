@@ -1,12 +1,12 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.superapp-directory',
+  appId: 'io.ionic.starter',
   appName: 'directory',
-  webDir: 'www',
+  webDir: 'dist',
   server: {
-    androidScheme: 'https',
-  },
+    androidScheme: 'https'
+  }
 };
 
 export default config;

@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{ existingExpenseId ? "Update" : "New" }} Expense </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="medium" (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <ion-list>
+      <ion-list-header>
+        <ion-label> Details </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-input
+          label="Merchant"
+          formControlName="merchant"
+          placeholder="Name"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="$"
+          formControlName="cost"
+          placeholder="0.00"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Note" formControlName="note"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select label="Category" formControlName="category">
+          <ion-select-option value="Meals - No Travel">
+            Meals - No Travel
+          </ion-select-option>
+          <ion-select-option value="Office Expenses">
+            Office Expenses
+          </ion-select-option>
+          <ion-select-option value="Other"> Other </ion-select-option>
+          <ion-select-option value="Parking"> Parking </ion-select-option>
+          <ion-select-option value="Recruiting"> Recruiting </ion-select-option>
+          <ion-select-option value="Shipping"> Shipping </ion-select-option>
+          <ion-select-option value="Software"> Software </ion-select-option>
+          <ion-select-option value="Travel - Airfare">
+            Travel - Airfare
+          </ion-select-option>
+          <ion-select-option value="Travel - Hotel">
+            Travel - Hotel
+          </ion-select-option>
+          <ion-select-option value="Travel - Meals">
+            Travel - Meals
+          </ion-select-option>
+          <ion-select-option value="Travel - Other">
+            Travel - Other
+          </ion-select-option>
+          <ion-select-option value="Travel - Transportation">
+            Travel - Transportation
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="datetime"
+              presentation="date"
+              formControlName="date"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+    </ion-list>
+
+    <ion-list-header>
+      <ion-label>Receipt</ion-label>
+      <ion-button (click)="captureReceipt()">
+        {{ existingExpenseId ? "Update" : "Add" }} Photo
+      </ion-button>
+    </ion-list-header>
+    <img [src]="safeReceipt" (click)="captureReceipt()" />
+  </form>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button [disabled]="form.invalid" (click)="submit()" type="submit">
+      <ion-icon name="save"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

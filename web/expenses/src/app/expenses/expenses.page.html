@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Expenses</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Expenses</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
+    <ion-fab-button (click)="openModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ng-container *ngIf="expenseService.expenses$ | async as expenses">
+    <ion-list *ngIf="expenses.length > 0">
+      <ion-list-header>
+        <ion-label>Completed Expenses</ion-label>
+      </ion-list-header>
+      <app-expense-list-item
+        *ngFor="let expense of expenses"
+        [expense]="expense"
+        (expenseClicked)="openModal($event)"
+      >
+      </app-expense-list-item>
+    </ion-list>
+  </ng-container>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-item-sliding>
+  <ion-item (click)="expenseClicked.emit(expense.id)">
+    <ng-container *ngIf="expense.receipt; else noReceipt">
+      <ion-avatar slot="start">
+        <ion-img src="{{ expense.receipt.webviewPath }}"></ion-img>
+      </ion-avatar>
+    </ng-container>
+    <ng-template #noReceipt>
+      <ion-avatar slot="start">
+        <img src="../../../assets/expenses.svg" />
+      </ion-avatar>
+    </ng-template>
+
+    <ion-label>
+      <h2>{{ expense.merchant }}</h2>
+      <p>{{ expense.category }}</p>
+    </ion-label>
+    <ion-note color="success" slot="end">${{ expense.cost }}</ion-note>
+  </ion-item>
+  <ion-item-options side="end">
+    <ion-item-option (click)="removeExpense()" color="danger">
+      Remove
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>
