@@ -1,5 +1,5 @@
 //
-//  SettingsView.swift
+//  ProfileView.swift
 //  Superapp Starter
 //
 //  Created by Conner Simmons on 8/19/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct ProfileView: View {
     @EnvironmentObject var auth: AuthViewModel
     
     var body: some View {
@@ -31,7 +31,6 @@ struct SettingsView: View {
                 
                 Section() {
                     Button(role: .destructive) {
-                        print("goodbye")
                         auth.logout()
                     } label: {
                         HStack(spacing: 12) {
@@ -47,13 +46,7 @@ struct SettingsView: View {
                     
                 }
             }
-            .navigationTitle("Settings")
+            .navigationTitle("Profile")
         }
     }
 }
-
-//struct SettingsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SettingsView()
-//    }
-//}

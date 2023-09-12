@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonItem, IonLabel } from "@ionic/vue";
+import { IonItem, IonLabel, IonAvatar } from "@ionic/vue";
 
 defineProps({
   employee: Object,

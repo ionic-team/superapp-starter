@@ -2,7 +2,7 @@
 //  Profile.swift
 //  Superapp Starter
 //
-//  Created by Ionic Conner on 8/24/23.
+//  Created by Conner Simmons on 8/24/23.
 //
 
 import Foundation

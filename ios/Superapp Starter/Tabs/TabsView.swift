@@ -23,9 +23,9 @@ struct TabsView: View {
                     Label("Hub", systemImage: "square.grid.3x3")
                 }
             
-            SettingsView()
+            ProfileView()
                 .tabItem {
-                    Label("Settings", systemImage: "gearshape")
+                    Label("Profile", systemImage: "person")
                 }
         }
     }

@@ -2,7 +2,7 @@
 //  AppTileView.swift
 //  Superapp Starter
 //
-//  Created by Ionic Conner on 8/29/23.
+//  Created by Conner Simmons on 8/29/23.
 //
 
 import SwiftUI

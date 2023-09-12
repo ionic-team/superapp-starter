@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
           <ion-back-button default-href="/"></ion-back-button>
@@ -51,6 +51,11 @@ import {
   IonContent,
   IonHeader,
   IonIcon,
+  IonAvatar,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardContent,
   IonItem,
   IonLabel,
   IonList,

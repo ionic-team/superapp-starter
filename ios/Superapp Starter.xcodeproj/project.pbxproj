@@ -19,6 +19,11 @@
 		43BA0CE22A991A8300296F67 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BA0CE12A991A8300296F67 /* Color+Theme.swift */; };
 		43BA0CEA2A9CEEBD00296F67 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BA0CE92A9CEEBD00296F67 /* AuthViewModel.swift */; };
 		43BA0CED2A9D47F200296F67 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BA0CEC2A9D47F200296F67 /* AvatarView.swift */; };
+		43CCBABA2AAE202E0070ABCC /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = 43CCBAB92AAE202E0070ABCC /* FeedKit */; };
+		43CCBABC2AAF67540070ABCC /* FeedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCBABB2AAF67540070ABCC /* FeedItemView.swift */; };
+		43CCBABE2AAF679A0070ABCC /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCBABD2AAF679A0070ABCC /* FeedItem.swift */; };
+		43CCBAC02AAF952E0070ABCC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCBABF2AAF952E0070ABCC /* Date.swift */; };
+		43CCBAC22AAFACDA0070ABCC /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCBAC12AAFACDA0070ABCC /* SafariView.swift */; };
 		43EDEDA12A9D555E00B6F148 /* IonicPortals in Frameworks */ = {isa = PBXBuildFile; productRef = 43EDEDA02A9D555E00B6F148 /* IonicPortals */; };
 		43F402C02A9F8FCC00C37AC0 /* MiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F402BF2A9F8FCC00C37AC0 /* MiniApp.swift */; };
 		43F402C42A9FA26E00C37AC0 /* MiniAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F402C32A9FA26E00C37AC0 /* MiniAppView.swift */; };
@@ -26,7 +31,7 @@
 		43F4CB412A914FF10064DC06 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4CB402A914FF10064DC06 /* TabsView.swift */; };
 		43F4CB432A914FF30064DC06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43F4CB422A914FF30064DC06 /* Assets.xcassets */; };
 		43F4CB472A914FF30064DC06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43F4CB462A914FF30064DC06 /* Preview Assets.xcassets */; };
-		43F4CB6C2A9152D10064DC06 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4CB6B2A9152D10064DC06 /* SettingsView.swift */; };
+		43F4CB6C2A9152D10064DC06 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4CB6B2A9152D10064DC06 /* ProfileView.swift */; };
 		43F4CB6E2A9152DC0064DC06 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4CB6D2A9152DC0064DC06 /* HomeView.swift */; };
 		43F4CB712A97C9070064DC06 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4CB702A97C9070064DC06 /* LoginView.swift */; };
 		43F4CB742A97CAD50064DC06 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4CB732A97CAD50064DC06 /* Profile.swift */; };
@@ -61,6 +66,10 @@
 		43BA0CE92A9CEEBD00296F67 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		43BA0CEC2A9D47F200296F67 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		43BF086E2AA0FC140050CD15 /* Superapp-Starter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Superapp-Starter-Info.plist"; sourceTree = SOURCE_ROOT; };
+		43CCBABB2AAF67540070ABCC /* FeedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemView.swift; sourceTree = "<group>"; };
+		43CCBABD2AAF679A0070ABCC /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		43CCBABF2AAF952E0070ABCC /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		43CCBAC12AAFACDA0070ABCC /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		43F402BF2A9F8FCC00C37AC0 /* MiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniApp.swift; sourceTree = "<group>"; };
 		43F402C32A9FA26E00C37AC0 /* MiniAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniAppView.swift; sourceTree = "<group>"; };
 		43F4CB3B2A914FF10064DC06 /* Superapp Starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Superapp Starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +80,7 @@
 		43F4CB462A914FF30064DC06 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43F4CB4C2A914FF30064DC06 /* Superapp StarterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Superapp StarterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F4CB562A914FF30064DC06 /* Superapp StarterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Superapp StarterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		43F4CB6B2A9152D10064DC06 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		43F4CB6B2A9152D10064DC06 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		43F4CB6D2A9152DC0064DC06 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		43F4CB702A97C9070064DC06 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		43F4CB732A97CAD50064DC06 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -85,6 +94,7 @@
 				43BA0CD92A99180400296F67 /* ComposableArchitecture in Frameworks */,
 				43EDEDA12A9D555E00B6F148 /* IonicPortals in Frameworks */,
 				43936F2D2A97CF760035FD36 /* Auth0 in Frameworks */,
+				43CCBABA2AAE202E0070ABCC /* FeedKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +145,7 @@
 			children = (
 				43BA0CE12A991A8300296F67 /* Color+Theme.swift */,
 				4319178A2A9FE9C4009F9215 /* Encodable.swift */,
+				43CCBABF2AAF952E0070ABCC /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -147,18 +158,13 @@
 			path = Tabs;
 			sourceTree = "<group>";
 		};
-		43BA0CE42A99394A00296F67 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		43BA0CEB2A9D47E500296F67 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				43BA0CEC2A9D47F200296F67 /* AvatarView.swift */,
 				43894AD92A9E44D100DFA6AF /* AppTileView.swift */,
+				43CCBABB2AAF67540070ABCC /* FeedItemView.swift */,
+				43CCBAC12AAFACDA0070ABCC /* SafariView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -194,10 +200,9 @@
 				43F4CB6F2A97C8E70064DC06 /* Login */,
 				43F4CB692A91527A0064DC06 /* Home */,
 				431BAE372A9E3C6700F4729E /* Hub */,
-				43F4CB6A2A91528B0064DC06 /* Settings */,
+				43F4CB6A2A91528B0064DC06 /* Profile */,
 				43BA0CEB2A9D47E500296F67 /* Components */,
 				43F4CB722A97CAC20064DC06 /* Model */,
-				43BA0CE42A99394A00296F67 /* Services */,
 				43BA0CE02A991A5E00296F67 /* Extensions */,
 				43F4CB452A914FF30064DC06 /* Preview Content */,
 			);
@@ -220,12 +225,12 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		43F4CB6A2A91528B0064DC06 /* Settings */ = {
+		43F4CB6A2A91528B0064DC06 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				43F4CB6B2A9152D10064DC06 /* SettingsView.swift */,
+				43F4CB6B2A9152D10064DC06 /* ProfileView.swift */,
 			);
-			path = Settings;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		43F4CB6F2A97C8E70064DC06 /* Login */ = {
@@ -242,6 +247,7 @@
 			children = (
 				43BA0CE92A9CEEBD00296F67 /* AuthViewModel.swift */,
 				431917852A9FA42D009F9215 /* Creds.swift */,
+				43CCBABD2AAF679A0070ABCC /* FeedItem.swift */,
 				43F402BF2A9F8FCC00C37AC0 /* MiniApp.swift */,
 				43F4CB732A97CAD50064DC06 /* Profile.swift */,
 			);
@@ -269,6 +275,7 @@
 				43936F2C2A97CF760035FD36 /* Auth0 */,
 				43BA0CD82A99180400296F67 /* ComposableArchitecture */,
 				43EDEDA02A9D555E00B6F148 /* IonicPortals */,
+				43CCBAB92AAE202E0070ABCC /* FeedKit */,
 			);
 			productName = "iOS Superapp Starter";
 			productReference = 43F4CB3B2A914FF10064DC06 /* Superapp Starter.app */;
@@ -346,6 +353,7 @@
 				43936F2B2A97CF760035FD36 /* XCRemoteSwiftPackageReference "Auth0" */,
 				43BA0CD72A99180400296F67 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				43EDED9F2A9D555E00B6F148 /* XCRemoteSwiftPackageReference "ionic-portals-ios" */,
+				43CCBAB82AAE202E0070ABCC /* XCRemoteSwiftPackageReference "FeedKit" */,
 			);
 			productRefGroup = 43F4CB3C2A914FF10064DC06 /* Products */;
 			projectDirPath = "";
@@ -402,7 +410,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nEMBEDDED_DIR=\"${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app/portals\"\nAPP_LIST=(\n    \"directory|/../web/directory/www\"\n    \"kudos|/../web/kudos/dist\"\n    \"expenses|/../web/expenses/dist\"\n    #\"hr|/../../web/human-resources/dist\"\n    #\"crm|/../../web/crm/dist\"\n    #\"time|/../../web/time-tracking/dist\"\n)\n\necho \"App ${TARGET_NAME} is being copied! ${EMBEDDED_APP}\";\n\nmkdir \"${EMBEDDED_DIR}\"\n\nfor APP_INFO in ${APP_LIST[@]}\ndo\n    IFS=\"|\" read -r -a arr <<< \"${APP_INFO}\"\n    APP_NAME=\"${arr[0]}\"\n    EMBEDDED_APP=\"${SRCROOT}${arr[1]}\"\n    \n    echo \"${APP_NAME} ${EMBEDDED_APP}\"\n    \n    if [ -d \"${EMBEDDED_DIR}/${APP_NAME}\" ]\n    then\n        cd \"${EMBEDDED_DIR}\"\n        rm -r \"${APP_NAME}\"\n    fi\n\n    mkdir \"${EMBEDDED_DIR}/${APP_NAME}\"\n\n    ZIP_FILE=\"${APP_NAME}.zip\"\n\n    if [ -d \"${EMBEDDED_APP}\" ] \n    then\n        cd \"${EMBEDDED_APP}\"\n        zip -vr \"${ZIP_FILE}\" * -x \"*.DS_Store\"\n        unzip \"${ZIP_FILE}\" -d \"${EMBEDDED_DIR}/${APP_NAME}\"\n        rm \"${ZIP_FILE}\"\n    else\n        echo \"App ${APP_NAME} has not been built! ${EMBEDDED_APP}\"\n        exit 999\n    fi\ndone\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nEMBEDDED_DIR=\"${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app/portals\"\nAPP_LIST=(\n    \"directory|/../web/directory/dist\"\n    \"kudos|/../web/kudos/dist\"\n    \"expenses|/../web/expenses/www\"\n    #\"hr|/../../web/human-resources/dist\"\n    #\"crm|/../../web/crm/dist\"\n    #\"time|/../../web/time-tracking/dist\"\n)\n\necho \"App ${TARGET_NAME} is being copied! ${EMBEDDED_APP}\";\n\nmkdir \"${EMBEDDED_DIR}\"\n\nfor APP_INFO in ${APP_LIST[@]}\ndo\n    IFS=\"|\" read -r -a arr <<< \"${APP_INFO}\"\n    APP_NAME=\"${arr[0]}\"\n    EMBEDDED_APP=\"${SRCROOT}${arr[1]}\"\n    \n    echo \"${APP_NAME} ${EMBEDDED_APP}\"\n    \n    if [ -d \"${EMBEDDED_DIR}/${APP_NAME}\" ]\n    then\n        cd \"${EMBEDDED_DIR}\"\n        rm -r \"${APP_NAME}\"\n    fi\n\n    mkdir \"${EMBEDDED_DIR}/${APP_NAME}\"\n\n    ZIP_FILE=\"${APP_NAME}.zip\"\n\n    if [ -d \"${EMBEDDED_APP}\" ] \n    then\n        cd \"${EMBEDDED_APP}\"\n        zip -vr \"${ZIP_FILE}\" * -x \"*.DS_Store\"\n        unzip \"${ZIP_FILE}\" -d \"${EMBEDDED_DIR}/${APP_NAME}\"\n        rm \"${ZIP_FILE}\"\n    else\n        echo \"App ${APP_NAME} has not been built! ${EMBEDDED_APP}\"\n        exit 999\n    fi\ndone\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -414,13 +422,17 @@
 				43BA0CEA2A9CEEBD00296F67 /* AuthViewModel.swift in Sources */,
 				431917862A9FA42D009F9215 /* Creds.swift in Sources */,
 				43BA0CDF2A991A1000296F67 /* LoginLogo.swift in Sources */,
-				43F4CB6C2A9152D10064DC06 /* SettingsView.swift in Sources */,
+				43F4CB6C2A9152D10064DC06 /* ProfileView.swift in Sources */,
+				43CCBAC02AAF952E0070ABCC /* Date.swift in Sources */,
 				43BA0CED2A9D47F200296F67 /* AvatarView.swift in Sources */,
 				43894ADA2A9E44D100DFA6AF /* AppTileView.swift in Sources */,
+				43CCBABE2AAF679A0070ABCC /* FeedItem.swift in Sources */,
 				43F402C02A9F8FCC00C37AC0 /* MiniApp.swift in Sources */,
+				43CCBABC2AAF67540070ABCC /* FeedItemView.swift in Sources */,
 				43F4CB742A97CAD50064DC06 /* Profile.swift in Sources */,
 				431BAE392A9E3C7500F4729E /* HubView.swift in Sources */,
 				43F4CB6E2A9152DC0064DC06 /* HomeView.swift in Sources */,
+				43CCBAC22AAFACDA0070ABCC /* SafariView.swift in Sources */,
 				43BA0CD42A9913E600296F67 /* AppView.swift in Sources */,
 				43F402C42A9FA26E00C37AC0 /* MiniAppView.swift in Sources */,
 				43F4CB412A914FF10064DC06 /* TabsView.swift in Sources */,
@@ -796,6 +808,14 @@
 				minimumVersion = 1.2.0;
 			};
 		};
+		43CCBAB82AAE202E0070ABCC /* XCRemoteSwiftPackageReference "FeedKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nmdias/FeedKit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
 		43EDED9F2A9D555E00B6F148 /* XCRemoteSwiftPackageReference "ionic-portals-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ionic-team/ionic-portals-ios";
@@ -816,6 +836,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 43BA0CD72A99180400296F67 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		43CCBAB92AAE202E0070ABCC /* FeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43CCBAB82AAE202E0070ABCC /* XCRemoteSwiftPackageReference "FeedKit" */;
+			productName = FeedKit;
 		};
 		43EDEDA02A9D555E00B6F148 /* IonicPortals */ = {
 			isa = XCSwiftPackageProductDependency;

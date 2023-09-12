@@ -20,9 +20,9 @@ extension Encodable {
     }
     
     /// Converting object to postable JSON
-        func toJSON(_ encoder: JSONEncoder = JSONEncoder()) throws -> NSString {
-            let data = try encoder.encode(self)
-            let result = String(decoding: data, as: UTF8.self)
-            return NSString(string: result)
-        }
+    func toJSON(_ encoder: JSONEncoder = JSONEncoder()) throws -> NSString {
+        let data = try encoder.encode(self)
+        let result = String(decoding: data, as: UTF8.self)
+        return NSString(string: result)
+    }
 }

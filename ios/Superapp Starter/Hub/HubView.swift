@@ -10,7 +10,6 @@ import SwiftUI
 struct HubView: View {
     @EnvironmentObject var auth: AuthViewModel
     
-    //    private let data: [Int] = Array(1...20)
     private let apps: [MiniApp] = [
         MiniApp(id: "directory", name: "Directory", icon: "person.2.circle.fill", description: "Search for colleagues and their contact information."),
         MiniApp(id: "kudos", name: "Kudos", icon: "star.circle.fill", description: "Recognize your colleagues for their hard work."),
@@ -18,6 +17,7 @@ struct HubView: View {
     ]
     
     @State private var isMultiColumn: Bool = false
+    @State private var selectedApp: MiniApp? = nil
     
     private var numberColumns: [GridItem] {
         Array(repeating: GridItem(.flexible()), count: isMultiColumn ? 2 : 1)
@@ -28,13 +28,10 @@ struct HubView: View {
             ScrollView {
                 LazyVGrid(columns: numberColumns, alignment: .trailing, spacing: 16) {
                     ForEach(apps, id: \.self) { app in
-                        NavigationLink(destination: MiniAppView(id: app.id)) {
-//                        NavigationLink(state: MiniAppFeature.State(app: app, with: auth.userCreds)) {
-                            AppTileView(height: isMultiColumn ? 150 : 200, icon: app.icon, appName: app.name, appDesc: app.description, showDesc: !isMultiColumn)
-//                                .onTapGesture {
-//                                    print("mini app clicked")
-//                                }
-                        }
+                        AppTileView(height: isMultiColumn ? 150 : 200, icon: app.icon, appName: app.name, appDesc: app.description, showDesc: !isMultiColumn)
+                            .onTapGesture {
+                                selectedApp = app
+                            }
                     }
                 }.animation(.spring(), value: isMultiColumn)
             }
@@ -47,8 +44,18 @@ struct HubView: View {
                 }
             }
             .padding(16)
+            .fullScreenCover(item: $selectedApp) { app in
+                MiniAppView(id: app.id)
+                    .overlay(alignment: .topTrailing) {
+                        Button {
+                            selectedApp = nil
+                        } label: {
+                            Image(systemName: "xmark")
+                                .padding()
+                        }
+                    }
+            }
         }
-        //        .navigationViewStyle(StackNavigationViewStyle())
     }
     
 }

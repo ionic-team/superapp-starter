@@ -2,7 +2,7 @@
 //  LoginLogo.swift
 //  Superapp Starter
 //
-//  Created by Ionic Conner on 8/25/23.
+//  Created by Conner Simmons on 8/25/23.
 //
 
 import SwiftUI

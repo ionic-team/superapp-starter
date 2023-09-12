@@ -29,7 +29,7 @@ class AuthViewModel: ObservableObject {
                     
                     // Pass the credentials over to the Credentials Manager
                     _ = self.credentialsManager.store(credentials: credentials)
-                    print(self.credentialsManager.user)
+//                    print(self.credentialsManager.user)
                     self.userProfile = Profile.from(credentials.idToken)
                     self.userCreds = Creds.from(credentials)
                     print("User: \(String(describing: self.userProfile))")
