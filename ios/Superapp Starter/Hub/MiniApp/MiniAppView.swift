@@ -22,9 +22,9 @@ struct MiniAppView: View {
 //        let encoder = JSONEncoder()
 //        let creds = (try? encoder.encode(auth.userCreds))
 //        print(creds)
-        //        self.initialContext = [
-        //            "auth0": creds
-        //        ]
+//        self.initialContext = [
+//            "auth0": creds
+//        ]
     }
     
     var body: some View {

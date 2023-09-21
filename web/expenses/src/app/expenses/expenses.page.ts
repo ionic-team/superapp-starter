@@ -9,18 +9,12 @@ import { ExpenseService } from '../services/expense.service';
   templateUrl: './expenses.page.html',
   styleUrls: ['./expenses.page.scss'],
 })
-export class ExpensesPage implements OnInit {
-  public expenses: Expense[] = [];
-
+export class ExpensesPage {
   constructor(
     private modalCtrl: ModalController,
     private routerOutlet: IonRouterOutlet,
     public expenseService: ExpenseService
   ) {}
-
-  async ngOnInit() {
-    // this.expenses = await this.expenseService.loadSaved();
-  }
 
   async openModal(expenseId?: number) {
     const modal = await this.modalCtrl.create({
@@ -32,11 +26,5 @@ export class ExpensesPage implements OnInit {
       },
     });
     modal.present();
-
-    // const { data, role } = await modal.onWillDismiss();
-
-    // if (role === 'confirm') {
-    //   this.message = `Hello, ${data}!`;
-    // }
   }
 }

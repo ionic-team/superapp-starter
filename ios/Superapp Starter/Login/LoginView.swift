@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Auth0
 
 struct LoginView: View {
     @EnvironmentObject var auth: AuthViewModel

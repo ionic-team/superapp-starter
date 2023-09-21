@@ -25,7 +25,7 @@ export class ExpenseModalComponent {
   public safeReceipt!: SafeUrl;
 
   constructor(
-    private modalController: ModalController,
+    private modalCtrl: ModalController,
     private formBuilder: FormBuilder,
     private expenseService: ExpenseService
   ) {}
@@ -95,9 +95,9 @@ export class ExpenseModalComponent {
       };
     }
 
-    await this.expenseService.saveExpense(exp, isNew);
-
-    this.closeModal();
+    await this.expenseService.saveExpense(exp, isNew).then(() => {
+      this.close();
+    });
   }
 
   setReceiptImage(imgStr?: string) {
@@ -117,8 +117,8 @@ export class ExpenseModalComponent {
     this.safeReceipt = image.sanitizedPath;
   }
 
-  async closeModal() {
-    await this.modalController.dismiss(null);
+  close() {
+    return this.modalCtrl.dismiss();
   }
 }
 

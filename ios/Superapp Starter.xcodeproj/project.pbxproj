@@ -13,8 +13,8 @@
 		43894ADA2A9E44D100DFA6AF /* AppTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43894AD92A9E44D100DFA6AF /* AppTileView.swift */; };
 		43936F2D2A97CF760035FD36 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 43936F2C2A97CF760035FD36 /* Auth0 */; };
 		43936F2F2A97CFF10035FD36 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43936F2E2A97CFF10035FD36 /* Auth0.plist */; };
+		43B35C322ABC9D7300A1FACF /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B35C312ABC9D7300A1FACF /* DummyView.swift */; };
 		43BA0CD42A9913E600296F67 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BA0CD32A9913E600296F67 /* AppView.swift */; };
-		43BA0CD92A99180400296F67 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 43BA0CD82A99180400296F67 /* ComposableArchitecture */; };
 		43BA0CDF2A991A1000296F67 /* LoginLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BA0CDE2A991A1000296F67 /* LoginLogo.swift */; };
 		43BA0CE22A991A8300296F67 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BA0CE12A991A8300296F67 /* Color+Theme.swift */; };
 		43BA0CEA2A9CEEBD00296F67 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BA0CE92A9CEEBD00296F67 /* AuthViewModel.swift */; };
@@ -60,6 +60,7 @@
 		431BAE382A9E3C7500F4729E /* HubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubView.swift; sourceTree = "<group>"; };
 		43894AD92A9E44D100DFA6AF /* AppTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTileView.swift; sourceTree = "<group>"; };
 		43936F2E2A97CFF10035FD36 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		43B35C312ABC9D7300A1FACF /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
 		43BA0CD32A9913E600296F67 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		43BA0CDE2A991A1000296F67 /* LoginLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLogo.swift; sourceTree = "<group>"; };
 		43BA0CE12A991A8300296F67 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43BA0CD92A99180400296F67 /* ComposableArchitecture in Frameworks */,
 				43EDEDA12A9D555E00B6F148 /* IonicPortals in Frameworks */,
 				43936F2D2A97CF760035FD36 /* Auth0 in Frameworks */,
 				43CCBABA2AAE202E0070ABCC /* FeedKit in Frameworks */,
@@ -205,6 +205,7 @@
 				43F4CB722A97CAC20064DC06 /* Model */,
 				43BA0CE02A991A5E00296F67 /* Extensions */,
 				43F4CB452A914FF30064DC06 /* Preview Content */,
+				43B35C312ABC9D7300A1FACF /* DummyView.swift */,
 			);
 			path = "Superapp Starter";
 			sourceTree = "<group>";
@@ -273,7 +274,6 @@
 			name = "Superapp Starter";
 			packageProductDependencies = (
 				43936F2C2A97CF760035FD36 /* Auth0 */,
-				43BA0CD82A99180400296F67 /* ComposableArchitecture */,
 				43EDEDA02A9D555E00B6F148 /* IonicPortals */,
 				43CCBAB92AAE202E0070ABCC /* FeedKit */,
 			);
@@ -351,7 +351,6 @@
 			mainGroup = 43F4CB322A914FF10064DC06;
 			packageReferences = (
 				43936F2B2A97CF760035FD36 /* XCRemoteSwiftPackageReference "Auth0" */,
-				43BA0CD72A99180400296F67 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				43EDED9F2A9D555E00B6F148 /* XCRemoteSwiftPackageReference "ionic-portals-ios" */,
 				43CCBAB82AAE202E0070ABCC /* XCRemoteSwiftPackageReference "FeedKit" */,
 			);
@@ -410,7 +409,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nEMBEDDED_DIR=\"${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app/portals\"\nAPP_LIST=(\n    \"directory|/../web/directory/dist\"\n    \"kudos|/../web/kudos/dist\"\n    \"expenses|/../web/expenses/www\"\n    #\"hr|/../../web/human-resources/dist\"\n    #\"crm|/../../web/crm/dist\"\n    #\"time|/../../web/time-tracking/dist\"\n)\n\necho \"App ${TARGET_NAME} is being copied! ${EMBEDDED_APP}\";\n\nmkdir \"${EMBEDDED_DIR}\"\n\nfor APP_INFO in ${APP_LIST[@]}\ndo\n    IFS=\"|\" read -r -a arr <<< \"${APP_INFO}\"\n    APP_NAME=\"${arr[0]}\"\n    EMBEDDED_APP=\"${SRCROOT}${arr[1]}\"\n    \n    echo \"${APP_NAME} ${EMBEDDED_APP}\"\n    \n    if [ -d \"${EMBEDDED_DIR}/${APP_NAME}\" ]\n    then\n        cd \"${EMBEDDED_DIR}\"\n        rm -r \"${APP_NAME}\"\n    fi\n\n    mkdir \"${EMBEDDED_DIR}/${APP_NAME}\"\n\n    ZIP_FILE=\"${APP_NAME}.zip\"\n\n    if [ -d \"${EMBEDDED_APP}\" ] \n    then\n        cd \"${EMBEDDED_APP}\"\n        zip -vr \"${ZIP_FILE}\" * -x \"*.DS_Store\"\n        unzip \"${ZIP_FILE}\" -d \"${EMBEDDED_DIR}/${APP_NAME}\"\n        rm \"${ZIP_FILE}\"\n    else\n        echo \"App ${APP_NAME} has not been built! ${EMBEDDED_APP}\"\n        exit 999\n    fi\ndone\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nEMBEDDED_DIR=\"${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app/portals\"\nAPP_LIST=(\n    \"directory|/../web/directory/dist\"\n    \"kudos|/../web/kudos/dist\"\n    \"expenses|/../web/expenses/www\"\n)\n\necho \"App ${TARGET_NAME} is being copied! ${EMBEDDED_APP}\";\n\nmkdir \"${EMBEDDED_DIR}\"\n\nfor APP_INFO in ${APP_LIST[@]}\ndo\n    IFS=\"|\" read -r -a arr <<< \"${APP_INFO}\"\n    APP_NAME=\"${arr[0]}\"\n    EMBEDDED_APP=\"${SRCROOT}${arr[1]}\"\n    \n    echo \"${APP_NAME} ${EMBEDDED_APP}\"\n    \n    if [ -d \"${EMBEDDED_DIR}/${APP_NAME}\" ]\n    then\n        cd \"${EMBEDDED_DIR}\"\n        rm -r \"${APP_NAME}\"\n    fi\n\n    mkdir \"${EMBEDDED_DIR}/${APP_NAME}\"\n\n    ZIP_FILE=\"${APP_NAME}.zip\"\n\n    if [ -d \"${EMBEDDED_APP}\" ] \n    then\n        cd \"${EMBEDDED_APP}\"\n        zip -vr \"${ZIP_FILE}\" * -x \"*.DS_Store\"\n        unzip \"${ZIP_FILE}\" -d \"${EMBEDDED_DIR}/${APP_NAME}\"\n        rm \"${ZIP_FILE}\"\n    else\n        echo \"App ${APP_NAME} has not been built! ${EMBEDDED_APP}\"\n        exit 999\n    fi\ndone\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -426,6 +425,7 @@
 				43CCBAC02AAF952E0070ABCC /* Date.swift in Sources */,
 				43BA0CED2A9D47F200296F67 /* AvatarView.swift in Sources */,
 				43894ADA2A9E44D100DFA6AF /* AppTileView.swift in Sources */,
+				43B35C322ABC9D7300A1FACF /* DummyView.swift in Sources */,
 				43CCBABE2AAF679A0070ABCC /* FeedItem.swift in Sources */,
 				43F402C02A9F8FCC00C37AC0 /* MiniApp.swift in Sources */,
 				43CCBABC2AAF67540070ABCC /* FeedItemView.swift in Sources */,
@@ -605,7 +605,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -644,7 +644,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -800,14 +800,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		43BA0CD72A99180400296F67 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.2.0;
-			};
-		};
 		43CCBAB82AAE202E0070ABCC /* XCRemoteSwiftPackageReference "FeedKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nmdias/FeedKit.git";
@@ -831,11 +823,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 43936F2B2A97CF760035FD36 /* XCRemoteSwiftPackageReference "Auth0" */;
 			productName = Auth0;
-		};
-		43BA0CD82A99180400296F67 /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 43BA0CD72A99180400296F67 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
 		};
 		43CCBAB92AAE202E0070ABCC /* FeedKit */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -10,13 +10,11 @@ import SwiftUI
 struct TabsView: View {
     var body: some View {
         TabView {
-            NavigationStack {
-                HomeView()
-                    .navigationTitle("Home")
-            }
-            .tabItem {
-                Label("Home", systemImage: "house")
-            }
+            
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
             
             HubView()
                 .tabItem {

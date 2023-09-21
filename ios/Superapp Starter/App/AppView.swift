@@ -6,15 +6,10 @@
 //
 
 import SwiftUI
-import Auth0
 
 struct AppView: View {
     @EnvironmentObject var auth: AuthViewModel
-    
-    init() {
         
-    }
-    
     var body: some View {
         
         Group {

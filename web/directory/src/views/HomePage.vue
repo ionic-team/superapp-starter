@@ -38,6 +38,7 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
+  IonSearchbar,
 } from "@ionic/vue";
 import EmployeeListItem from "@/components/EmployeeListItem.vue";
 import { getEmployees, Employee } from "@/data/employees";
