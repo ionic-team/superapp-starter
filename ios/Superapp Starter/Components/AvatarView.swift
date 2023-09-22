@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AvatarView: View {
     let urlString: String
-    let size: CGFloat
+    var size: CGFloat = 72
     
     var body: some View {
         AsyncImage(url: URL(string: urlString)) { image in
@@ -29,6 +29,6 @@ struct AvatarView: View {
 
 struct AvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarView(urlString: "https://dashboard.ionicframework.com/img/ionitron-avatar.png", size: 72)
+        AvatarView(urlString: "https://dashboard.ionicframework.com/img/ionitron-avatar.png")
     }
 }

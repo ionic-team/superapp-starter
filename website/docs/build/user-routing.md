@@ -2,7 +2,7 @@
 sidebar_label: 'User Routing'
 ---
 
-# Routing the User
+# Routing the user
 
 Provided in the starter repo in the `main` branch is the `AppView` file. `SuperappStarterApp`, the entry point for our superapp, points to `AppView` to dictate where the user start's their journey.
 
@@ -29,9 +29,7 @@ With the `auth` property added into `AppView` we can update the `body` property 
 Let's update the `body` with a `Group` where if the user is authenticated, they will be navigated to `TabsView`. Otherwise, they will be pushed to the `LoginView` to start the authentication process.
 
 ```swift title="ios/Superapp Starter/App/AppView.swift"
-...
 var body: some View {
-
     Group {
         if self.auth.isAuthenticated {
             TabsView()
@@ -40,7 +38,49 @@ var body: some View {
         }
     }
 }
-...
 ```
 
-You'll notice we check the `isAuthenticated` property from our injected `AuthViewModel` instance and direct where the user goes.
+You'll notice we check the `isAuthenticated` property from our injected `AuthViewModel` instance and direct the user where they should go.
+
+## A quick look at TabsView
+
+When an authenticated user is directed into the main app experience they'll be pushed into the traditional tab-based layout. This is defined within the `TabsView` file. `TabsView` utilizes the `TabView` container within the `body` property to set up tab-based navigation.
+
+```swift title="ios/Superapp Starter/Tabs/TabsView.swift"
+import SwiftUI
+
+struct TabsView: View {
+    var body: some View {
+        TabView { ... }
+    }
+}
+```
+
+Inside the `TabView`, we define three tabs: **Home Tab (`HomeView`)**, **Hub Tab (`HubView`)**, and **Profile Tab (`ProfileView`)**. Each tab has a `tabItem { ... }` modifier that adds a label and an icon to the tab.
+
+```swift title="ios/Superapp Starter/Tabs/TabsView.swift"
+TabView {
+    HomeView()
+        .tabItem {
+            Label("Home", systemImage: "house")
+        }
+
+    HubView()
+        .tabItem {
+            Label("Hub", systemImage: "square.grid.3x3")
+        }
+
+    ProfileView()
+        .tabItem {
+            Label("Profile", systemImage: "person")
+        }
+}
+```
+
+So, we can see that when the user gets pushed into this `TabsView`, they will see a tab bar at the bottom of the screen with these three options: Home, Hub, and Profile. Tapping on each tab will display the respective view associated with that section of your superapp.
+
+This code creates a fundamental navigation structure for your app, making it easy for users to explore its various features or sections. It's a common pattern used in many mobile applications to provide a user-friendly and organized interface.
+
+## What's next?
+
+With the user successfully routing from login to the main tabs view of the application, let's begin building out the views for the tabs.

@@ -3,7 +3,7 @@ sidebar_label: 'Superapps'
 title: 'Introduction to Superapps'
 ---
 
-# Introduction to Superapps
+# Introduction to superapps
 
 Superapps are defined as applications that provide end users, be it employees, partners, or customers, with access to independently created mini apps. These mini apps are unified under a single umbrella application, so users don’t need to hop between digital experiences. The core application contains essential functionality, such as authentication and payments, while the mini apps can add on needed features.
 

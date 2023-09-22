@@ -144,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				43BA0CE12A991A8300296F67 /* Color+Theme.swift */,
-				4319178A2A9FE9C4009F9215 /* Encodable.swift */,
 				43CCBABF2AAF952E0070ABCC /* Date.swift */,
+				4319178A2A9FE9C4009F9215 /* Encodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

@@ -25,15 +25,27 @@ const sidebars = {
       items: [
         'overview',
         'getting-started/intro',
-        'getting-started/portals-intro',
         'getting-started/starter-repo',
+        'getting-started/portals-intro',
         'getting-started/architecture',
       ],
     },
     {
       type: 'category',
       label: 'Build',
-      items: ['build/authentication', 'build/login-view', 'build/user-routing'],
+      items: [
+        'build/authentication',
+        'build/login-view',
+        'build/user-routing',
+        'build/home-view',
+        'build/profile-view',
+        'build/hub-view',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Connect',
+      items: [],
     },
   ],
 };

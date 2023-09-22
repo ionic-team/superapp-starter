@@ -3,11 +3,11 @@ sidebar_label: 'Overview'
 slug: '/'
 ---
 
-# Building Your First Ionic Superapp
+# Building your first Ionic Superapp
 
 The purpose of this guide is to walk through a step-by-step process of building your very first superapp using the Ionic Platform. In short order, you will have created the beginnings of your enterprise's superapp by leveraging the existing services within Ionic. Once you're completed with this cookbook, you'll be well on your way to building out an amazing superapp experience for your internal workforce or customers!
 
-## Register your Product Key
+## Register your product key
 
 For this guide to work, you will need to have an Ionic Portals Key. If you do not have a key already, follow the steps [outlined here](https://ionic.io/docs/portals/getting-started#using-your-product-key). With that settled you will have access to:
 

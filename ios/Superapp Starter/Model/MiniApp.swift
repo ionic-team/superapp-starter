@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct MiniApp: Identifiable, Hashable, Decodable {
     var id: String

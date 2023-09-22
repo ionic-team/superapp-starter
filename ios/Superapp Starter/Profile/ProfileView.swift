@@ -15,7 +15,7 @@ struct ProfileView: View {
             List {
                 Section() {
                     HStack {
-                        AvatarView(urlString: auth.userProfile!.picture, size: 72)
+                        AvatarView(urlString: auth.userProfile!.picture)
                         
                         VStack(alignment: .leading, spacing: 4) {
                             Text(auth.userProfile!.name)
@@ -42,8 +42,8 @@ struct ProfileView: View {
                                 .font(.subheadline)
                         }
                         
-                    }.buttonStyle(.borderless)
-                    
+                    }
+                    .buttonStyle(.borderless)
                 }
             }
             .navigationTitle("Profile")

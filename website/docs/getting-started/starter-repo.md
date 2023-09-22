@@ -24,17 +24,35 @@ The `completed` branch is a representation of the superapp in it’s final state
 
 ### Core app
 
-The iOS core app starts with the following files:
+The iOS core app provides a variety of files for you at the start. Let's take a look at brief details of each based, group by general type.
+
+Main Views:
 
 - **SuperappStarterApp** - The entry point to the entire app.
 - **AppView** - The application’s gateway view that determines whether the user is presented with a login view or the tabs view for a logged-in user.
 - **LoginView** - The view the user sees when they are required to log in to the app.
-- **LoginLogo** - A simple logo view used within the login view of the app.
 - **TabsView** - The holder view for each of the main tabs the app will present when the user is logged in.
 - **HomeView** - The holder view for the first tab of the `TabsView`. It will house a simple news-like feed.
 - **HubView** - The holder view for the second tab of the `TabsView`. It will display the mini app(s) that the authenticated user has access too.
 - **ProfileView** - The holder view for the third tab of the `TabsView`. It presents information about the authenticated user and the ability to log out.
 
+Component Views:
+
+- **LoginLogo** - A simple logo view used within the login view of the app.
+- **FeedItemView** - The list item view for each element within the news-like feed in `HomeView`.
+- **SafariView** - A view built to leverage the `SFSafariViewController` and present web content from the `HomeView`.
+- **AvatarView** - A view that loads an image asynchronously to display a user's picture from a URL string.
+
+Models:
+
+- **FeedItem** - The list item model for each element within the news-like feed in `HomeView`.
+
+Extensions:
+
+- **Color** - An extension to easily define an reuse RGB colors throughout the superapp.
+- **Date** - An extension for handy functions to translate a `Date` to various `String` formats.
+- **Encodable** - An extension with functions to tranlate `Encodable` models into different formats.
+
 ### Mini app
 
-The React mini application, entitled Kudos, is a fully fleshed-out web application leveraging Ionic React. The intent of the app is to simulate one of the many workplace apps that an organization may embed within their superapp. Kudos allows employees to recognize their colleagues for their efforts. In a real-world application, employees could then translate their Kudos points into some type of reward. It could be a gift card, a donation to a charity, additional PTO, etc.
+The React mini application, entitled **Kudos**, is a fully fleshed-out web application leveraging Ionic React. The intent of the app is to simulate one of the many workplace apps that an organization may embed within their superapp. Kudos allows employees to recognize their colleagues for their efforts. In a real-world application, employees could then translate their Kudos points into some type of reward. It could be a gift card, a donation to a charity, additional PTO, etc.

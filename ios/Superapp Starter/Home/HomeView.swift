@@ -14,7 +14,6 @@ struct HomeView: View {
     @State var feedItems: [FeedItem] = []
     @State private var selectedItem: FeedItem?
     
-    
     var body: some View {
         NavigationStack {
             List(feedItems) { item in
@@ -22,10 +21,6 @@ struct HomeView: View {
                     .onTapGesture {
                         selectedItem = item
                     }
-            }
-            .fullScreenCover(item: $selectedItem) { feedItem in
-                SafariView(url: URL(string: feedItem.link)!)
-                    .ignoresSafeArea()
             }
             .onAppear {
                 let parser = FeedParser(URL: feedURL)
@@ -48,6 +43,10 @@ struct HomeView: View {
                 }
             }
             .navigationBarTitle("Recent Blogs")
+            .fullScreenCover(item: $selectedItem) { feedItem in
+                SafariView(url: URL(string: feedItem.link)!)
+                    .ignoresSafeArea()
+            }
         }
     }
 }

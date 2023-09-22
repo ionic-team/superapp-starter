@@ -11,9 +11,23 @@ struct HubView: View {
     @EnvironmentObject var auth: AuthViewModel
     
     private let apps: [MiniApp] = [
-        MiniApp(id: "directory", name: "Directory", icon: "person.2.circle.fill", description: "Search for colleagues and their contact information."),
-        MiniApp(id: "kudos", name: "Kudos", icon: "star.circle.fill", description: "Recognize your colleagues for their hard work."),
-        MiniApp(id: "expenses", name: "Expenses", icon: "dollarsign.circle.fill", description: "Submit expenses for business related activities.")
+        MiniApp(
+            id: "directory",
+            name: "Directory",
+            icon: "person.2.circle.fill",
+            description: "Search for colleagues and their contact information."
+        ),
+        MiniApp(
+            id: "kudos",
+            name: "Kudos", icon: "star.circle.fill",
+            description: "Recognize your colleagues for their hard work."
+        ),
+        MiniApp(
+            id: "expenses",
+            name: "Expenses",
+            icon: "dollarsign.circle.fill",
+            description: "Submit expenses for business related activities."
+        )
     ]
     
     @State private var isMultiColumn: Bool = false

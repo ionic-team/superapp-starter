@@ -8,7 +8,7 @@ With the necessary logic in place to provide the methods necessary to authentica
 
 For sake of this walkthrough we'll keep things simple and also leverage an existing `LoginLogo` implementation that houses a sub-view to our login view. We'll also only work through getting a user logged in. Understand that with a more fleshed out login workflow, there may also be options for user's to register a new account or reset their password if they can't remember their credentials to gain access to the app.
 
-## Building the Login View
+## Building the LoginView
 
 The `LoginView` is the front door to our superapp. It provides the user the option to "Log in" with their credentials, as confirmed via the authentication provider outlined in previous sections.
 
@@ -62,7 +62,7 @@ struct LoginView: View {
 
 You'll notice that many of the accompanying child views have additional padding added to some of it's sides. This is simply to improve the positioning of the elements visually and avoid any of the elements from touching the edges of the screen. There have also been modifications to the `Button`, such as style and shape, and it's child label, including font type and weight, in order to make the views more attractive.
 
-## Triggering the Login Flow
+## Triggering the login flow
 
 In the previous section you'll notice a comment within the `Button` that identifies the need to add code to trigger the authentication flow. For this, we'll be referencing the previously built `login()` function in the `AuthViewModel`. In order to leverage an instance of the `AuthViewModel`, which we'll name `auth`, we need to inject it using a property wrapper called `@EnvironmentObject`.
 
