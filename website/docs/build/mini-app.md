@@ -4,9 +4,13 @@ sidebar_label: 'Mini Apps'
 
 # Mini apps
 
-<!-- What are they? -->
+While a superapp in general (like the iOS superapp app we are building) is typically a native application that's home to core features and functions, mini apps are home to experiences that allow users to complete other specific tasks.
 
-## Understanding the mini app object
+In our example, the mini app **Kudos** offers the option to users to recognize the work of their colleagues. It has a very finite purpose. This type of feature-set is common in mini apps. They are focus on one or a small number of features that aim to cover one of the many tasks users need to complete throughout their entire superapp user journey.
+
+Let's take a look at home a mini app is loaded up into the superapp experience.
+
+<!-- ## Understanding the mini app object -->
 
 ## Loading the mini app
 

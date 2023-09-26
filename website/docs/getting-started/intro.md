@@ -13,12 +13,18 @@ We don’t think that the “super” in superapps necessarily means that you ne
 
 ## Real-world superapps
 
-There are multiple types of superapps that exist within the marketplace today. The two leading types we see are customer-facing superapps and workplace superapps.
+There are multiple types of superapps that exist within the marketplace today. The two leading types we see are consumer superapps and workplace superapps.
 
-<!-- discuss WeChat and other examples -->
+<!--
+### Consumer superapps
 
-<!-- discuss Me@Walmart and other examples -->
+discuss WeChat and other examples
+-->
 
-## Benefits and challenges of superapps
+<!--
+### Workplace superapps
 
-.
+discuss Me@Walmart and other examples
+-->
+
+<!-- ## Benefits and challenges of superapps -->
