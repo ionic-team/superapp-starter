@@ -40,6 +40,7 @@ const sidebars = {
         'build/home-view',
         'build/profile-view',
         'build/hub-view',
+        'build/mini-app',
       ],
     },
     {

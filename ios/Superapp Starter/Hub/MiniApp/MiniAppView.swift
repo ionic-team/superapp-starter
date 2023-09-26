@@ -7,12 +7,10 @@
 
 import Capacitor
 import IonicPortals
-import ComposableArchitecture
 import SwiftUI
-import Auth0
 
 struct MiniAppView: View {
-    @EnvironmentObject var auth: AuthViewModel
+//    @EnvironmentObject var auth: AuthViewModel
     let appId: String
     var initialContext: [String: JSValue] = [:]
     
@@ -36,7 +34,6 @@ struct MiniAppView: View {
                     initialContext: initialContext
                 )
             )
-            //
         }
     }
 }
