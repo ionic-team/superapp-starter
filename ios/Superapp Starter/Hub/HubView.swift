@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HubView: View {
-    @EnvironmentObject var auth: AuthViewModel
     
     private let apps: [MiniApp] = [
         MiniApp(
@@ -49,6 +48,7 @@ struct HubView: View {
                     }
                 }.animation(.spring(), value: isMultiColumn)
             }
+            .padding(16)
             .navigationTitle("App Hub")
             .toolbar {
                 Button {
@@ -57,7 +57,6 @@ struct HubView: View {
                     Image(systemName: isMultiColumn ? "rectangle.grid.1x2.fill" : "square.grid.2x2.fill")
                 }
             }
-            .padding(16)
             .fullScreenCover(item: $selectedApp) { app in
                 MiniAppView(id: app.id)
                     .overlay(alignment: .topTrailing) {

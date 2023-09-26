@@ -46,6 +46,7 @@ Component Views:
 Models:
 
 - **FeedItem** - The list item model for each element within the news-like feed in `HomeView`.
+- **MiniApp** - The mini app model for each element within the `HubView` mini app grid.
 
 Extensions:
 
