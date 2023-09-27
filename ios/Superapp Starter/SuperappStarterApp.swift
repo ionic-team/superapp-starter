@@ -10,7 +10,6 @@ import IonicPortals
 
 @main
 struct SuperappStarterApp: App {
-    @StateObject var auth = AuthViewModel()
     
     init() {
         PortalsRegistrationManager.shared.register(key: "YOUR_KEY_HERE")
@@ -19,7 +18,6 @@ struct SuperappStarterApp: App {
     var body: some Scene {
         WindowGroup {
             AppView()
-                .environmentObject(auth)
         }
     }
 }

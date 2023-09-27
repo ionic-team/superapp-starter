@@ -8,17 +8,8 @@
 import SwiftUI
 
 struct AppView: View {
-    @EnvironmentObject var auth: AuthViewModel
-        
     var body: some View {
-        
-        Group {
-            if self.auth.isAuthenticated {
-                TabsView()
-            } else {
-                LoginView()
-            }
-        }
+        LoginView()
     }
 }
 
