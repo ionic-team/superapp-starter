@@ -10,15 +10,11 @@ In a superapp architecture, the core native application is typically in charge o
 
 For your superapp, you will want to leverage an SSO approach, meaning we’ll be sharing the same credentials for core app access and mini app access. This drastically reduces the burden users face today where they may have to log in to each of their apps separately to perform their respective duties.
 
-For our superapp example, we’ll be using Auth0 as the provider. First, you’ll need to setup the project within Auth0.
-
-### Setting up an Auth0 Project
-
-<!-- show steps to setup project or link out -->
+For our superapp example, we’ll be using [Auth0](https://auth0.com/) as the provider. First, you’ll need to add Auth0 to your iOS project and register the app within Auth0.
 
 ### Adding the Auth0 package
 
-With the authentication provider setup, we can go ahead and import the package. Similar steps as adding `IonicPortals` – `File > Add Packages…` in the menu. Search for the following url:
+Using Swift Package Manager, much like adding `IonicPortals`, we can go ahead and import the `Auth0` package. Same steps as before. Choose `File > Add Packages…` in the menu. Search for the following url:
 
 ```shell
 https://github.com/auth0/Auth0.swift
@@ -27,6 +23,45 @@ https://github.com/auth0/Auth0.swift
 You’ll see `Auth0` in the result set. Setup your dependency rule and then select `Add Package`. Now you’re ready to get authentication setup within your superapp.
 
 All the necessary configurations are in place to begin building out the associate models and views for the authentication flow.
+
+### Register the app with Auth0
+
+> **Prerequisite:** Auth0 account
+>
+> If you already have an [Auth0](https://auth0.com/) account, go ahead an log in. If not, [sign up](https://auth0.com/signup) for a free account.
+
+Now that you’ve set up the app to work with Auth0, it’s time to set up your Auth0 tenant to work with the app. To accomplish this, you’ll do the following:
+
+1. Add the app to your Auth0 dashboard’s list of registered applications
+1. Gather two pieces of information that the app will need to delegate login/logout to Auth0:
+   - Your tenant’s domain
+   - The client ID that Auth0 will assign to the app
+1. Provide Auth0 with the necessary callback URLs to contact the app: one to call at the end of the login process and the other to call at the end of the logout process
+
+[Follow along Auth0's app registration steps here.](https://auth0.com/blog/get-started-ios-authentication-swift-swiftui-part-1-login-logout/#Register-the-App-with-Auth0)
+
+### Create a Property List
+
+To use Auth0 to authenticate users, your app needs to:
+
+- Communicate with the appropriate Auth0 tenant, and
+- Identify itself to that server.
+
+You do this by providing the app with that tenant’s identifier, a value known as the domain, and the app’s identifier, the client ID. Auth0.swift expects to find these values in a property list (a .plist file)
+
+[Follow along Auth0's steps to create the `.plist` file here.](https://auth0.com/blog/get-started-ios-authentication-swift-swiftui-part-1-login-logout/#Create-a-Property-List)
+
+### Configure callback and logout URLs
+
+With the property list created, the app knows how to communicate with Auth0. It’s time to do the inverse and tell Auth0 how to communicate with the app.
+
+[Follow along Auth0's steps to setup the Callback URL here.](https://auth0.com/blog/get-started-ios-authentication-swift-swiftui-part-1-login-logout/#Create-the-Callback-URLs)
+
+:::note
+
+For additional Auth0 configuration details for a native iOS appliction check out the [Get Started with iOS Authentication using SwiftUI](https://auth0.com/blog/get-started-ios-authentication-swift-swiftui-part-1-login-logout/) tutorial or follow along the [iOS Quickstart](https://auth0.com/docs/quickstart/native/ios-swift/interactive) guide.
+
+:::
 
 ## Login MVVM
 
@@ -37,6 +72,8 @@ The `LoginView` controls what our user sees when attempting to log in to the sup
 ### AuthViewModel
 
 The `AuthViewModel` lays the foundation for user authentication changes that needs to be referenced throughout the app's views. Being that it's defined as an `ObservableObject`, views are able to react when properties defined within the model change.
+
+Let's create the `AuthViewModel.swift` file within the `Model` directory and establish the `class`.
 
 ```swift title="ios/Superapp Starter/Model/AuthViewModel.swift"
 import Foundation
@@ -121,7 +158,9 @@ We now have a preview of how the `Profile` and `Creds` classes are leveraged, bu
 
 ### Profile
 
-The Profile object is created by leveraging the `idToken` returned from successful login. The model looks as follows:
+The `Profile` object is created by leveraging the `idToken` returned from successful login.
+
+Let's create the `Profile.swift` file within the `Model` directory and establish the `struct` as follows:
 
 ```swift title="ios/Superapp Starter/Model/Profile.swift"
 struct Profile: Identifiable, Codable {
@@ -183,6 +222,8 @@ As shown above, we see how the `empty` static property is defined. This was leve
 ### Creds
 
 The `Creds` object, short for Credentials, is also home to essential pieces of information related to the user authentication.
+
+Let's create the `Creds.swift` file within the `Model` directory and establish the `struct` as follows:
 
 ```swift title="ios/Superapp Starter/Model/Creds.swift"
 import Foundation

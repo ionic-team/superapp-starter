@@ -38,10 +38,11 @@ Main Views:
 
 Component Views:
 
-- **LoginLogo** - A simple logo view used within the login view of the app.
-- **FeedItemView** - The list item view for each element within the news-like feed in `HomeView`.
-- **SafariView** - A view built to leverage the `SFSafariViewController` and present web content from the `HomeView`.
+- **AppTileView** - A grid item view for each element within the `HubView` mini app collection.
 - **AvatarView** - A view that loads an image asynchronously to display a user's picture from a URL string.
+- **FeedItemView** - The list item view for each element within the news-like feed in `HomeView`.
+- **LoginLogo** - A simple logo view used within the login view of the app.
+- **SafariView** - A view built to leverage the `SFSafariViewController` and present web content from the `HomeView`.
 
 Models:
 

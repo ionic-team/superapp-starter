@@ -8,6 +8,58 @@ Provided in the starter repo in the `main` branch is the `AppView` file. `Supera
 
 Initally, `AppView` is just a redirect to the `LoginView`. This is because we had no logic in place to recognize that a user was logged in and should be redirected to the `TabsView`. Now that this is accomplished, we can update `AppView` appropriately.
 
+## Updating the SuperappStarterApp
+
+Before we update the `AppView` we need to update our entry point, `SuperappStarterApp`. Since `AppView` will depend on changes in authentication, we should first define a `@StateObject`.
+
+```diff title="ios/Superapp Starter/SuperappStarterApp.swift"
+import SwiftUI
+import IonicPortals
+
+@main
+struct SuperappStarterApp: App {
++  @StateObject var auth = AuthViewModel()
+
+
+  init() {
+    PortalsRegistrationManager.shared.register(key: "YOUR_KEY_HERE")
+  }
+
+
+  var body: some Scene {
+      WindowGroup {
+        AppView()
+      }
+  }
+}
+```
+
+As the state of `auth` changes we can then tell the `AppView` to update accordingly. This is done by injecting the view via `environmentObject`.
+
+```diff title="ios/Superapp Starter/SuperappStarterApp.swift"
+import SwiftUI
+import IonicPortals
+
+@main
+struct SuperappStarterApp: App {
+  @StateObject var auth = AuthViewModel()
+
+
+  init() {
+    PortalsRegistrationManager.shared.register(key: "YOUR_KEY_HERE")
+  }
+
+
+  var body: some Scene {
+      WindowGroup {
+        AppView()
++            .environmentObject(auth)
+
+      }
+  }
+}
+```
+
 ## Updating the AppView
 
 With the necessary authentication logic in place we can update how `AppView` manages the overall navigation and user experience. Much like the update to the `LoginView` previously, we need an instance of `AuthViewModel`. By injecting `AuthViewModel` into `AppView` with `@EnvironmentObject` we gain access to the `isAuthenticated` property we previously defined.
@@ -24,7 +76,7 @@ struct AppView: View {
 }
 ```
 
-With the `auth` property added into `AppView` we can update the `body` property of the view to include a `Group`. `Group` is a way to group view together and is often used for conditional view rendering. That's exactly what we'll use it for here.
+With the `auth` property added into `AppView` and listening to the `@StateObject` change passed down, we can update the `body` property of the view to include a `Group`. `Group` is a way to group view together and is often used for conditional view rendering. That's exactly what we'll use it for here.
 
 Let's update the `body` with a `Group` where if the user is authenticated, they will be navigated to `TabsView`. Otherwise, they will be pushed to the `LoginView` to start the authentication process.
 
