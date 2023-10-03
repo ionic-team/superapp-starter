@@ -16,15 +16,13 @@ import {
   IonSelectOption,
   IonInput,
 } from "@ionic/react";
-import { close } from "ionicons/icons";
+import { chevronBack, close } from "ionicons/icons";
 import PreviousKudosGiven from "../components/PreviousKudoEvents";
-import { KudoEvent } from "../models/KudoEvent";
-import { Employee } from "../models/Employee";
-import { employeesData } from "../data/employees";
-import { kudosData } from "../data/kudos";
+import { Employee, KudoEvent } from "../../../data/types";
+import { getEmployees, getKudos } from "../../../data/dataApi";
+import { dismissPlugin } from "../../../data/superAppHandoff";
 import format from "date-fns/format";
 
-// const Kudos: React.FC<{ session: Session }> = ({ session }) => {
 const Kudos: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [employees, setEmployees] = useState<Employee[]>([]);
@@ -45,8 +43,8 @@ const Kudos: React.FC = () => {
     let isSubscribed = true;
 
     const fetchData = async () => {
-      const e = employeesData;
-      const k = kudosData.sort((a, b) => b.id - a.id); // sort kudos by id descending
+      const e = getEmployees();
+      const k = getKudos().sort((a, b) => b.id - a.id); // sort kudos by id descending
 
       if (isSubscribed) {
         setEmployees(e);
@@ -86,6 +84,16 @@ const Kudos: React.FC = () => {
     <IonPage ref={page}>
       <IonHeader>
         <IonToolbar>
+          <IonButtons>
+            <IonButton
+              onClick={() => {
+                dismissPlugin.dismiss();
+              }}
+            >
+              <IonIcon icon={chevronBack} />
+              Hub
+            </IonButton>
+          </IonButtons>
           <IonTitle>Kudos</IonTitle>
         </IonToolbar>
       </IonHeader>

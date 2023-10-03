@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Capacitor } from '@capacitor/core';
-import { Expense } from '../models/expense';
+import { Expense } from '@data/types';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 import { DomSanitizer } from '@angular/platform-browser';
 import { StorageService } from './storage.service';

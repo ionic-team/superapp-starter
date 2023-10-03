@@ -8,7 +8,7 @@ import {
   Output,
 } from '@angular/core';
 import { IonRouterOutlet, IonicModule, ModalController } from '@ionic/angular';
-import { Expense } from 'src/app/models/expense';
+import { Expense } from '@data/types';
 import { ExpenseService } from 'src/app/services/expense.service';
 import { ExpenseModalComponent } from '../expense-modal/expense-modal.component';
 

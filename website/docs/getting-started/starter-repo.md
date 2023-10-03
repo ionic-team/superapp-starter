@@ -54,6 +54,7 @@ Extensions:
 - **Color** - An extension to easily define an reuse RGB colors throughout the superapp.
 - **Date** - An extension for handy functions to translate a `Date` to various `String` formats.
 - **Encodable** - An extension with functions to tranlate `Encodable` models into different formats.
+- **Portal+MiniApp** - An extension of `Portal` from `IonicPortals` that simplifies creating the view from a `MiniApp`. Within the extension also lies a custom `Dismiss` plugin to tell the native layer to dismiss the view from a button click on the web app layer.
 
 ### Mini app
 

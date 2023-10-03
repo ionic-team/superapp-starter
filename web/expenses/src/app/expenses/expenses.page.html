@@ -1,5 +1,10 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="chevron-back"></ion-icon> Hub
+      </ion-button>
+    </ion-buttons>
     <ion-title>Expenses</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,7 +16,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
     <ion-fab-button (click)="openModal()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>

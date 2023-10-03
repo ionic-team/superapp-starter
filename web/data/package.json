@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@capacitor/core": "^5.2.2",
+    "@ionic/portals": "^0.8.1"
+  }
+}

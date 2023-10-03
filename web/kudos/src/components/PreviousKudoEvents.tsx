@@ -1,6 +1,5 @@
 import { IonList, IonItem, IonLabel, IonAvatar } from "@ionic/react";
-import { Employee } from "../models/Employee";
-import { KudoEvent } from "../models/KudoEvent";
+import { Employee, KudoEvent } from "../../../data/types";
 import { parse } from "date-fns";
 
 const PreviousKudosGiven: React.FC<{

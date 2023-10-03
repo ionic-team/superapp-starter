@@ -65,10 +65,10 @@ import {
 } from "@ionic/vue";
 import { call, mail, phonePortrait } from "ionicons/icons";
 import { useRoute } from "vue-router";
-import { getEmployee } from "../data/employees";
+import { getEmployeeById } from "../../../data/dataApi";
 
 const route = useRoute();
-const employee = getEmployee(parseInt(route.params.id as string, 10));
+const employee = getEmployeeById(parseInt(route.params.id as string, 10));
 </script>
 
 <style scoped>

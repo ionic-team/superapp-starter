@@ -9,8 +9,8 @@ import {
 } from '@angular/forms';
 import { SafeUrl } from '@angular/platform-browser';
 import { Capacitor } from '@capacitor/core';
+import { Expense } from '@data/types';
 import { IonicModule, ModalController } from '@ionic/angular';
-import { Expense } from 'src/app/models/expense';
 import { ExpenseService } from 'src/app/services/expense.service';
 
 @Component({

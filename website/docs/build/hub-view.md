@@ -57,7 +57,6 @@ struct HubView: View {
   private let apps: [MiniApp] = [ ... ]
 
   @State private var isMultiColumn: Bool = false
-  @State private var selectedApp: MiniApp? = nil
 
   private var numberColumns: [GridItem] {
     Array(repeating: GridItem(.flexible()), count: isMultiColumn ? 2 : 1)
@@ -67,7 +66,7 @@ struct HubView: View {
 }
 ```
 
-We now have a `Bool` value called `isMultiColumn` which tells us if we're currently viewing multiple columns at once. Also, depending on the value of `isMultiColumn`, we declare the `numberColumns` array of `GridItems` with the number we'd like. For this, it's simple. If we want to show multiple columns, the value is `2`. Otherwise, the value is `1`. Because `isMultiColumn` defaults to `false`, the user is presented with a single column view when the `HubView` is presented. Finally, we also have the `selectedApp` property to hold which mini app the user has chosen to view.
+We now have a `Bool` value called `isMultiColumn` which tells us if we're currently viewing multiple columns at once. Also, depending on the value of `isMultiColumn`, we declare the `numberColumns` array of `GridItems` with the number we'd like. For this, it's simple. If we want to show multiple columns, the value is `2`. Otherwise, the value is `1`. Because `isMultiColumn` defaults to `false`, the user is presented with a single column view when the `HubView` is presented.
 
 ## Building the mini app grid
 
@@ -82,7 +81,7 @@ var body: some View {
       }
       .animation(.spring(), value: isMultiColumn)
     }
-    .padding(16)
+    .padding(.horizontal, 16)
     .navigationTitle("App Hub")
   }
 }
@@ -99,22 +98,17 @@ var body: some View {
       LazyVGrid(columns: numberColumns, alignment: .trailing, spacing: 16) {
         ForEach(apps, id: \.self) { app in
           AppTileView(height: isMultiColumn ? 150 : 200, icon: app.icon, appName: app.name, appDesc: app.description, showDesc: !isMultiColumn)
-            .onTapGesture {
-              selectedApp = app
-            }
         }
       }
       .animation(.spring(), value: isMultiColumn)
     }
-    .padding(16)
+    .padding(.horizontal, 16)
     .navigationTitle("App Hub")
   }
 }
 ```
 
 The custom `AppTileView` has a slightly different height, depending on the number of columns shown. Also, when multiple columns are being shown, the mini app's description is not visible. This is due to the smaller footprint of the `AppTileView`.
-
-Further, we now have an `onTapGesture` attached to each `AppTileView`. This allows us to set the `selectedApp` property when the user chooses which mini app they'd like to view.
 
 ## Toggling the mini app grid view
 
@@ -126,7 +120,7 @@ var body: some View {
     ScrollView {
       ...
     }
-    .padding(16)
+    .padding(.horizontal, 16)
     .navigationTitle("App Hub")
     .toolbar {
       Button {
@@ -145,31 +139,28 @@ Once the value of `isMultiColumn` is flipped, the previous animation takes effec
 
 ## Presenting a selected mini app
 
-Now that we have a grid of mini apps populated, we want to be able to present the user with the mini app experience of the `selectedApp` we assigned on tap.
+Now that we have a grid of mini apps populated, we want to be able to present the user with the mini app experience upon user selection.
 
-To do this, we'll again use the `fullScreenCover` method. This will present the mini app's experience as a full-screen view. The `selectedApp` assigned earlier is passed into a `MiniAppView`. We also then add a `Button` overlay in the top right corner to enable the user to close out of that experience. This ultimately clears the local value of `selectedApp` as well.
+To do this, we'll use the `NavigationLink` method and wrap the `AppTileView` previously defined. This will present the mini app's experience as defined by a `desintation` parameter. We set that destination view as a `MiniAppView` and pass in the `MiniApp` from the `ForEach` loop. We also set a `.buttonStyle` on the `NavigationLink` to ensure the entire surface area of the grid tile is selectable.
 
 ```swift title="ios/Superapp Starter/Hub/HubView.swift"
 var body: some View {
   NavigationView {
     ScrollView {
-      ...
+      LazyVGrid(columns: numberColumns, alignment: .trailing, spacing: 16) {
+        ForEach(apps, id: \.self) { app in
+          NavigationLink(destination: MiniAppView(app: app)) {
+            AppTileView(height: isMultiColumn ? 150 : 200, icon: app.icon, appName: app.name, appDesc: app.description, showDesc: !isMultiColumn)
+          }
+          .buttonStyle(.plain)
+        }
+      }
+      .animation(.spring(), value: isMultiColumn)
     }
-    .padding(16)
+    .padding(.horizontal, 16)
     .navigationTitle("App Hub")
     .toolbar {
       ...
-    }
-    .fullScreenCover(item: $selectedApp) { app in
-      MiniAppView(id: app.id)
-        .overlay(alignment: .topTrailing) {
-          Button {
-            selectedApp = nil
-          } label: {
-            Image(systemName: "xmark")
-              .padding()
-          }
-        }
     }
   }
 }

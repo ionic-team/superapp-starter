@@ -14,52 +14,59 @@ Let's take a look at home a mini app is loaded up into the superapp experience.
 
 ## Loading the mini app
 
-As shown in the modal presentation section of the `HubView`, `MiniAppView` is passed the `id` property of the `MiniApp` object. We previously mentioned the importance the `id` field would play and that's what we'll see shortly. It will be imperative to the definition of the `PortalView` that's accessible by importing `IonicPortals`.
+As shown in the presentation section of the `HubView`, `MiniAppView` is passed an `app`, which is a `MiniApp` object. We previously mentioned the importance the `id` field would play and we'll see that soon. It will be imperative to the definition of the `PortalView` that's accessible by importing `IonicPortals`.
 
 ```swift title="ios/Superapp Starter/Hub/MiniApp/MiniAppView.swift"
 import IonicPortals
 import SwiftUI
 
 struct MiniAppView: View {
-  let appId: String
+  let selectedApp: MiniApp
 
-  init(id: String) {
-    self.appId = id
+  init(app: MiniApp) {
+    self.selectedApp = app
   }
 
   var body: some View { ... }
 }
 ```
 
-With the passed `id` is stored within the `MiniAppView` as `appId`, we can use it to initialize the `PortalView` that's presented. The `PortalView` is a SwiftUI View that displays a `Portal`. It sits within a `VStack` container within the view's `body`. The `Portal` is a web application that we'll embed within thie `PortalView`. However, we need to tell it where to look for the web application.
+With the passed `app` stored within the `MiniAppView` as `selectedApp`, we can use it to initialize the `PortalView` that's presented. The `PortalView` is a SwiftUI View that displays a `Portal`. It sits within a `VStack` container within the view's `body`. The `Portal` is a web application that we'll embed within thie `PortalView`.
 
-In our case, the `appId` is also the name of the `Portal`. Further, the location of the `Portal` is in a `/portals` directory in a path also named using the `appId`.
+To make the process of creating the `Portal` even simpler, we've provided the extension file `Portal+MiniApp.swift`. It includes a `create` function for defining the `Portal` with some passed properties. Also, within the same file is a custom [Capacitor](https://capacitorjs.com/) plugin definition called `Dismiss`. This plugin allows us to dismiss the presented web view on the native layer using a button defined at the web layer!
 
 ```swift title="ios/Superapp Starter/Hub/MiniApp/MiniAppView.swift"
 import IonicPortals
 import SwiftUI
 
 struct MiniAppView: View {
-  let appId: String
+  @Environment(\.dismiss) var dismiss
 
-  init(id: String) {
-    self.appId = id
+  let selectedApp: MiniApp
+
+  init(app: MiniApp) {
+    self.selectedApp = app
   }
 
   var body: some View {
     VStack {
       PortalView(
-        portal: .init(
-          name: self.appId,
-          startDir: "portals/\(self.appId)",
-        )
+        portal: .create(from: selectedApp) { @MainActor in
+          dismiss()
+        }
       )
+      .ignoresSafeArea()
     }
+    .navigationBarHidden(true)
   }
 }
 ```
 
-In order for this to work, that web application code must actually be at the directory we're telling the `Portal`/`PortalView` to look. To do this, we must add the web code to our iOS project.
+By using the `create` function and passing it the `selectedApp`, we've provided the information necessary to tell the app where to look for the web application. In our case, the `id` field of the `selectedApp` is also the name of the `Portal`. Further, the location of the `Portal` is in a `/portals` directory in a path also named using the `id`.
+
+You'll also see the closure from the `create` function where `dismiss()` is called. This is executed for the custom `Dismiss` plugin and then calls the `dismiss` environment variable that allows us to dismiss the view on the native side. Since the web application has it's own navigation bar, we've hidden the native navigation bar as well.
+
+Of course, in order for all this to work, that web application code must actually be at the directory we're telling the `Portal`/`PortalView` to look. To do this, we must add the web code to our iOS project.
 
 ## Adding web apps to your project
 
@@ -171,4 +178,4 @@ do
 done
 ```
 
-## Passing data to the mini app
+<!-- ## Passing data to the mini app -->

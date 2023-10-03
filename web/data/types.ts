@@ -18,6 +18,27 @@ export interface Employee {
   };
 }
 
+export interface Expense {
+  id: number;
+  merchant: string;
+  cost: number;
+  note?: string;
+  category: string;
+  date: string;
+  receipt?: Photo;
+
+  // constructor(c) {
+  //   this.receipt = new Photo();
+  // }
+}
+
+export interface Photo {
+  name: string;
+  // tempPath?: string;
+  filePath: string;
+  webviewPath: string;
+}
+
 export type KudoEvent = {
   id: number;
   giver: number;
@@ -25,4 +46,15 @@ export type KudoEvent = {
   created_at: string;
   amount: number;
   reason: string;
+};
+
+export type UnsavedKudoEvent = Omit<KudoEvent, "id" | "created_at">;
+
+export type Context = {
+  supabase: {
+    url: string;
+    accessToken: string;
+    refreshToken: string;
+  };
+  resourceId: number;
 };

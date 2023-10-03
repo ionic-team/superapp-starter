@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController, IonRouterOutlet } from '@ionic/angular';
 import { ExpenseModalComponent } from '../components/expense-modal/expense-modal.component';
-import { Expense } from '../models/expense';
 import { ExpenseService } from '../services/expense.service';
+import { dismissPlugin } from '@data/superAppHandoff';
 
 @Component({
   selector: 'app-expenses',
@@ -26,5 +26,9 @@ export class ExpensesPage {
       },
     });
     modal.present();
+  }
+
+  dismiss() {
+    dismissPlugin.dismiss();
   }
 }
