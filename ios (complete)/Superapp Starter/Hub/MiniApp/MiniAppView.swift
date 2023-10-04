@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MiniAppView: View {
     @Environment(\.dismiss) var dismiss
+    @State private var hideTabBar = true
 
     let selectedApp: MiniApp
     
@@ -21,11 +22,13 @@ struct MiniAppView: View {
         VStack {
             PortalView(
                 portal: .create(from: selectedApp) { @MainActor in
+                    hideTabBar.toggle()
                     dismiss()
                 }
             )
             .ignoresSafeArea()
         }
         .navigationBarHidden(true)
+        .toolbar(hideTabBar ? .hidden : .visible, for: .tabBar)
     }
 }

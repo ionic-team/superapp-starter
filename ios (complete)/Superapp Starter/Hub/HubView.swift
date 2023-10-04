@@ -43,7 +43,7 @@ struct HubView: View {
                         NavigationLink(destination: MiniAppView(app: app)) {
                             AppTileView(height: isMultiColumn ? 150 : 200, icon: app.icon, appName: app.name, appDesc: app.description, showDesc: !isMultiColumn)
                         }
-                        .buttonStyle(.plain)   
+                        .buttonStyle(.plain)
                     }
                 }
                 .animation(.spring(), value: isMultiColumn)

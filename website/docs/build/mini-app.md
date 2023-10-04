@@ -41,6 +41,7 @@ import SwiftUI
 
 struct MiniAppView: View {
   @Environment(\.dismiss) var dismiss
+  @State private var hideTabBar = true
 
   let selectedApp: MiniApp
 
@@ -52,12 +53,14 @@ struct MiniAppView: View {
     VStack {
       PortalView(
         portal: .create(from: selectedApp) { @MainActor in
+          hideTabBar.toggle()
           dismiss()
         }
       )
       .ignoresSafeArea()
     }
     .navigationBarHidden(true)
+    .toolbar(hideTabBar ? .hidden : .visible, for: .tabBar)
   }
 }
 ```
@@ -65,6 +68,8 @@ struct MiniAppView: View {
 By using the `create` function and passing it the `selectedApp`, we've provided the information necessary to tell the app where to look for the web application. In our case, the `id` field of the `selectedApp` is also the name of the `Portal`. Further, the location of the `Portal` is in a `/portals` directory in a path also named using the `id`.
 
 You'll also see the closure from the `create` function where `dismiss()` is called. This is executed for the custom `Dismiss` plugin and then calls the `dismiss` environment variable that allows us to dismiss the view on the native side. Since the web application has it's own navigation bar, we've hidden the native navigation bar as well.
+
+The presented web applications may also we expected to be "full screen", in which case we don't want the tab bar to be shown either. So, we can manipulate the visibility of the `.tabBar` using the `toolbar()` that watches a `@State` property. In this case, when the mini app is shown, the tab bar gets hidden. When it's going to be dismissed, we toggle the state so the tab bar will be visible again when the user gets back to the `HubView`.
 
 Of course, in order for all this to work, that web application code must actually be at the directory we're telling the `Portal`/`PortalView` to look. To do this, we must add the web code to our iOS project.
 

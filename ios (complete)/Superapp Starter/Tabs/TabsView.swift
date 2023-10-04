@@ -8,24 +8,29 @@
 import SwiftUI
 
 struct TabsView: View {
+    @State private var selection: Int = 1
+    
     var body: some View {
-        TabView {
-            
+        TabView(selection: $selection) {
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            
+                .tag(0)
+
             HubView()
                 .tabItem {
                     Label("Hub", systemImage: "square.grid.3x3")
                 }
-            
+                .tag(1)
+
             ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
+                .tag(2)
         }
+        .tint(.superPrimary)
     }
 }
 

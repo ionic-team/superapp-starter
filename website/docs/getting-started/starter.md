@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Starter Repo'
+sidebar_label: 'Superapp Starter'
 ---
 
 # Start building your superapp

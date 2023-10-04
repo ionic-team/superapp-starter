@@ -25,7 +25,7 @@ const sidebars = {
       items: [
         'overview',
         'getting-started/intro',
-        'getting-started/starter-repo',
+        'getting-started/starter',
         'getting-started/portals-intro',
         'getting-started/architecture',
       ],
