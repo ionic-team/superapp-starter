@@ -10,17 +10,17 @@ Portals is a supercharged native WebView component for iOS and Android that lets
 
 For this lab, we’ll be taking advantage of Portals to safely embed our mini app experience into the core app.
 
-## Install Portals
+## Portals Package
 
-To add the Portals package to our iOS core app within Xcode, we’ll select `File > Add Packages…` in the menu. Within the dialog, click on the search bar and paste the following package url:
+The starter project comes pre-loaded with the `IonicPortals` package.To add the Portals package to our iOS core app within Xcode, we selected `File > Add Packages…` in the menu. Within the dialog, we clicked on the search bar and pasted the following package url:
 
 ```shell
 https://github.com/ionic-team/ionic-portals-ios
 ```
 
-Within the result set you’ll see `ionic-portals-ios`. Setup your dependency rule and then select `Add Package`.
+Within the result set, `ionic-portals-ios` is shown. We setup the dependency rule we'd like and then selected `Add Package`.
 
-Great! You will now have `IonicPortals` and its corresponding packages added to your superapp project and available for import.
+`IonicPortals` and its corresponding packages were then added to the superapp project and available for import within our files!
 
 ## Register Portals
 

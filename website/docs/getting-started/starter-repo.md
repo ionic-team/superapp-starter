@@ -16,9 +16,9 @@ Let’s start by cloning the superapp repository:
 git clone https://github.com/ionic-team/superapp-starter.git
 ```
 
-The `main` branch of the repository consists of the files for the superapp in it’s very initial state. You’ll find some of the fundamental groundwork is laid that we’ll build upon as we go.
+The `main` branch of the repository contains files for the superapp in it’s very initial state, as well as it's completed state. Within the `ios (starter)` directory, you’ll find some of the fundamental groundwork is laid that we’ll build upon as we go. The `ios (complete)` directory is a representation of the superapp in it’s final state.
 
-The `completed` branch is a representation of the superapp in it’s final state. We encourage you to walk through each step of this cookbook to work your way to the final state. This will ensure you’re equipped with repeatable knowledge as you move forward with your superapp from here. However, if at any point you get stuck or just need to jump ahead, the completed branch is there for you to reference.
+We encourage you to walk through each step of this cookbook to work your way from the starting state to the completed state. This will ensure you’re equipped with repeatable knowledge as you move forward with your superapp from here. However, if at any point you get stuck or just need to jump ahead, the completed directory is there for you to reference.
 
 ## Starter files
 
@@ -55,6 +55,10 @@ Extensions:
 - **Date** - An extension for handy functions to translate a `Date` to various `String` formats.
 - **Encodable** - An extension with functions to tranlate `Encodable` models into different formats.
 - **Portal+MiniApp** - An extension of `Portal` from `IonicPortals` that simplifies creating the view from a `MiniApp`. Within the extension also lies a custom `Dismiss` plugin to tell the native layer to dismiss the view from a button click on the web app layer.
+
+Packages:
+
+- **IonicPortals** - This package is pre-loaded and brings with it essential libraries that will be used throughout the walkthrough.
 
 ### Mini app
 
