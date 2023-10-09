@@ -33,6 +33,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Build',
+      collapsed: false,
       items: [
         'build/authentication',
         'build/login-view',

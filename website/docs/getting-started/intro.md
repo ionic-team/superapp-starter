@@ -11,9 +11,9 @@ In some cases, this can mean having an app directory within the app. In other ca
 
 We don’t think that the “super” in superapps necessarily means that you need to have an in-app app store with thousands of apps to download. Instead, superapps allow the user to have one single app that shapes their experience for that specific company or brand, regardless of whether it’s a consumer superapp or a workplace superapp.
 
-## Real-world superapps
+<!-- ## Real-world superapps
 
-There are multiple types of superapps that exist within the marketplace today. The two leading types we see are consumer superapps and workplace superapps.
+There are multiple types of superapps that exist within the marketplace today. The two leading types we see are consumer superapps and workplace superapps. -->
 
 <!--
 ### Consumer superapps
