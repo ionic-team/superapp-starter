@@ -15,14 +15,14 @@ struct AvatarView: View {
         AsyncImage(url: URL(string: urlString)) { image in
             image
                 .resizable()
-                .aspectRatio(contentMode: .fill)
         } placeholder: {
             Image(systemName: "person.circle.fill")
+                .resizable()
                 .foregroundColor(.white)
                 .background(Color(.systemGray))
                 .opacity(0.5)
         }
-        .frame(width: size, height: size)
+        .frame(width: self.size, height: self.size)
         .clipShape(Circle())
     }
 }

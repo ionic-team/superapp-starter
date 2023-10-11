@@ -29,9 +29,9 @@
     "@capacitor/keyboard": "5.0.6",
     "@capacitor/preferences": "^5.0.6",
     "@capacitor/status-bar": "5.0.6",
-    "@ionic/angular": "^7.0.0",
+    "@ionic/angular": "^7.5.0",
     "@ionic/pwa-elements": "^3.2.2",
-    "ionicons": "^7.0.0",
+    "ionicons": "^7.2.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

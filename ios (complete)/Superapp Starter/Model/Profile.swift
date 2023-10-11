@@ -5,7 +5,6 @@
 //  Created by Conner Simmons on 8/24/23.
 //
 
-import Foundation
 import JWTDecode
 
 struct Profile: Identifiable, Codable {
@@ -15,15 +14,6 @@ struct Profile: Identifiable, Codable {
     let emailVerified: String
     let picture: String
     let updatedAt: String
-    
-    var initials: String {
-        let formatter = PersonNameComponentsFormatter()
-        if let components = formatter.personNameComponents(from: name) {
-            formatter.style = .abbreviated
-            return formatter.string(from: components)
-        }
-        return ""
-    }
 }
 
 extension Profile {
