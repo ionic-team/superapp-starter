@@ -18,17 +18,13 @@ const sidebars = {
 
   // But you can create a sidebar manually
   docsSidebar: [
+    'overview',
+    'intro',
     {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: [
-        'overview',
-        'getting-started/intro',
-        'getting-started/starter',
-        'getting-started/portals-intro',
-        'getting-started/architecture',
-      ],
+      items: ['overview', 'getting-started/starter', 'getting-started/portals-intro', 'getting-started/architecture'],
     },
     {
       type: 'category',
@@ -47,7 +43,30 @@ const sidebars = {
     {
       type: 'category',
       label: 'Connect',
-      items: [],
+      collapsed: false,
+      items: ['connect/send-context'],
+    },
+    {
+      type: 'category',
+      label: 'Examples',
+      collapsed: true,
+      items: [
+        {
+          type: 'link',
+          label: 'Supernova App',
+          href: 'https://github.com/ionic-team/portals-super-app-demo',
+        },
+        {
+          type: 'link',
+          label: 'E-commerce App',
+          href: 'https://ionic.io/docs/portals/for-ios/examples/ecommerce-app',
+        },
+        {
+          type: 'link',
+          label: 'Live Updates E-commerce App',
+          href: 'https://ionic.io/docs/portals/for-ios/examples/ecommerce-app-live-updates',
+        },
+      ],
     },
   ],
 };

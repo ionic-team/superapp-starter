@@ -81,30 +81,31 @@ struct LoginView: View {
 With `auth` declared, we can access the assosciated `login()` function that we need within the button.
 
 ```diff title="ios/Superapp Starter/Login/LoginView.swift"
-import SwiftUI
-
-struct LoginView: View {
-
-+  @EnvironmentObject var auth: AuthViewModel
+  import SwiftUI
 
 
-  var body: some View {
-    VStack {
-      ...
+  struct LoginView: View {
+
++   @EnvironmentObject var auth: AuthViewModel
 
 
-      Button {
-+          auth.login()
-      } label: {
-        Text("Log in")
-          ...
+    var body: some View {
+      VStack {
+        ...
+
+
+        Button {
++           auth.login()
+        } label: {
+          Text("Log in")
+            ...
+        }
+        ...
       }
-      ...
+      .padding([.leading, .trailing], 48)
     }
-    .padding([.leading, .trailing], 48)
-  }
 
-}
+  }
 ```
 
 Now, when the user clicks on the "Log in" button, the authentication flow via `Auth0` will begin. This presents a web view for the user to enter their credentials. Upon successful login, we've previously shown in `AuthViewModel` how their information is stored locally within the app. However, we'll need to navigate the user to the main app experience.

@@ -9,16 +9,13 @@ import Capacitor
 import IonicPortals
 
 extension Portal {
-    private static let encoder = JSONEncoder()
     
     static func create(
         from selectedApp: MiniApp,
-        with credentials: Creds,
         dismiss: @escaping () async -> Void
     ) -> Portal {
-        let creds = (try? encoder.encodeJsObject(credentials)) ?? [:]
         var initialContext: [String: JSValue] = [
-            "auth0": creds
+            "auth0": [:]
         ]
 
         initialContext["resourceId"] = selectedApp.id
@@ -30,6 +27,7 @@ extension Portal {
         )
         .adding(Dismiss(dismiss: dismiss))
     }
+
 }
 
 private class Dismiss: CAPInstancePlugin, CAPBridgedPlugin {
@@ -53,4 +51,3 @@ private class Dismiss: CAPInstancePlugin, CAPBridgedPlugin {
         }
     }
 }
-

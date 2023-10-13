@@ -144,7 +144,6 @@ func logout() {
         self.isAuthenticated = false
         self.userProfile = Profile.empty
         self.userCreds = Creds.empty
-
       case .failure(let error):
         print("Failed with: \(error)")
       }

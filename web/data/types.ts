@@ -51,10 +51,10 @@ export type KudoEvent = {
 export type UnsavedKudoEvent = Omit<KudoEvent, "id" | "created_at">;
 
 export type Context = {
-  supabase: {
-    url: string;
+  auth0: {
     accessToken: string;
+    idToken: string;
     refreshToken: string;
   };
-  resourceId: number;
+  resourceId: string;
 };

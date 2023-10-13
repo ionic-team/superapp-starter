@@ -13,25 +13,26 @@ Initally, `AppView` is just a redirect to the `LoginView`. This is because we ha
 Before we update the `AppView` we need to update our entry point, `SuperappStarterApp`. Since `AppView` will depend on changes in authentication, we should first define a `@StateObject`.
 
 ```diff title="ios/Superapp Starter/SuperappStarterApp.swift"
-import SwiftUI
-import IonicPortals
-
-@main
-struct SuperappStarterApp: App {
-+  @StateObject var auth = AuthViewModel()
+  import SwiftUI
+  import IonicPortals
 
 
-  init() {
-    PortalsRegistrationManager.shared.register(key: "YOUR_KEY_HERE")
-  }
+  @main
+  struct SuperappStarterApp: App {
++   @StateObject var auth = AuthViewModel()
 
 
-  var body: some Scene {
+    init() {
+      PortalsRegistrationManager.shared.register(key: "YOUR_KEY_HERE")
+    }
+
+
+    var body: some Scene {
       WindowGroup {
         AppView()
       }
+    }
   }
-}
 ```
 
 As the state of `auth` changes we can then tell the `AppView` to update accordingly. This is done by injecting the view via `environmentObject`.

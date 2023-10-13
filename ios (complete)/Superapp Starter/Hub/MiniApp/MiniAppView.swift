@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MiniAppView: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var auth: AuthViewModel
     @State private var hideTabBar = true
 
     let selectedApp: MiniApp
@@ -21,7 +22,7 @@ struct MiniAppView: View {
     var body: some View {
         VStack {
             PortalView(
-                portal: .create(from: selectedApp) { @MainActor in
+                portal: .create(from: selectedApp, with: auth.userCreds!) { @MainActor in
                     hideTabBar.toggle()
                     dismiss()
                 }

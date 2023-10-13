@@ -15,15 +15,17 @@ import {
   IonSelect,
   IonSelectOption,
   IonInput,
+  useIonToast,
 } from "@ionic/react";
 import { chevronBack, close } from "ionicons/icons";
 import PreviousKudosGiven from "../components/PreviousKudoEvents";
-import { Employee, KudoEvent } from "../../../data/types";
+import { Context, Employee, KudoEvent } from "../../../data/types";
 import { getEmployees, getKudos } from "../../../data/dataApi";
-import { dismissPlugin } from "../../../data/superAppHandoff";
+import { dismissPlugin, initialContext } from "../../../data/superAppHandoff";
 import format from "date-fns/format";
 
 const Kudos: React.FC = () => {
+  const [showToast] = useIonToast();
   const [showModal, setShowModal] = useState(false);
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [kudos, setKudoEvents] = useState<KudoEvent[]>([]);
@@ -49,6 +51,7 @@ const Kudos: React.FC = () => {
       if (isSubscribed) {
         setEmployees(e);
         setKudoEvents(k);
+        presentToast();
       }
     };
 
@@ -61,6 +64,15 @@ const Kudos: React.FC = () => {
 
   const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
+
+  const presentToast = () => {
+    showToast({
+      message: String((initialContext as Context).auth0.accessToken),
+      duration: 1500,
+      position: "bottom",
+      positionAnchor: "footer",
+    });
+  };
 
   const handleAddEntry = (event: any) => {
     event.preventDefault();
@@ -172,7 +184,7 @@ const Kudos: React.FC = () => {
         </IonModal>
       </IonContent>
 
-      <IonFooter>
+      <IonFooter id="footer">
         <IonToolbar>
           <IonButton
             onClick={handleOpenModal}

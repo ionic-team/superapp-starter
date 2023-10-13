@@ -165,3 +165,7 @@ var body: some View {
   }
 }
 ```
+
+## What's next?
+
+With the code in place to showcase available mini apps to the authenticated user and select one for presentation, now we can move on to loading up the mini app experience. To do this, we'll setup the `MiniAppView` and connect the web apps to the iOS project.
