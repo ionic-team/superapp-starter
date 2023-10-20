@@ -6,5 +6,7 @@
 	<string>ionicorg.auth0.com</string>
 	<key>ClientId</key>
 	<string>dt4BSAaJrJKoTzSDonV9wmX2PJgHFCa3</string>
+	<key>Namespace</key>
+	<string>https://ionic.io/superapp-starer</string>
 </dict>
 </plist>

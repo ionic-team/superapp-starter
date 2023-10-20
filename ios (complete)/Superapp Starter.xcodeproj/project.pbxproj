@@ -10,6 +10,7 @@
 		4308E4372AC770E600BD6632 /* Portal+MiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4308E4362AC770E600BD6632 /* Portal+MiniApp.swift */; };
 		431917862A9FA42D009F9215 /* Creds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431917852A9FA42D009F9215 /* Creds.swift */; };
 		431BAE392A9E3C7500F4729E /* HubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431BAE382A9E3C7500F4729E /* HubView.swift */; };
+		432990122ADEE669009A2047 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432990112ADEE669009A2047 /* Utilities.swift */; };
 		43894ADA2A9E44D100DFA6AF /* AppTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43894AD92A9E44D100DFA6AF /* AppTileView.swift */; };
 		43936F2D2A97CF760035FD36 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 43936F2C2A97CF760035FD36 /* Auth0 */; };
 		43936F2F2A97CFF10035FD36 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43936F2E2A97CFF10035FD36 /* Auth0.plist */; };
@@ -57,6 +58,7 @@
 		4308E4362AC770E600BD6632 /* Portal+MiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Portal+MiniApp.swift"; sourceTree = "<group>"; };
 		431917852A9FA42D009F9215 /* Creds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creds.swift; sourceTree = "<group>"; };
 		431BAE382A9E3C7500F4729E /* HubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubView.swift; sourceTree = "<group>"; };
+		432990112ADEE669009A2047 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		43894AD92A9E44D100DFA6AF /* AppTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTileView.swift; sourceTree = "<group>"; };
 		43936F2E2A97CFF10035FD36 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		43BA0CD32A9913E600296F67 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				43BA0CE12A991A8300296F67 /* Color+Theme.swift */,
 				43CCBABF2AAF952E0070ABCC /* Date.swift */,
 				4308E4362AC770E600BD6632 /* Portal+MiniApp.swift */,
+				432990112ADEE669009A2047 /* Utilities.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			files = (
 				43BA0CEA2A9CEEBD00296F67 /* AuthViewModel.swift in Sources */,
 				431917862A9FA42D009F9215 /* Creds.swift in Sources */,
+				432990122ADEE669009A2047 /* Utilities.swift in Sources */,
 				43BA0CDF2A991A1000296F67 /* LoginLogo.swift in Sources */,
 				43F4CB6C2A9152D10064DC06 /* ProfileView.swift in Sources */,
 				43CCBAC02AAF952E0070ABCC /* Date.swift in Sources */,

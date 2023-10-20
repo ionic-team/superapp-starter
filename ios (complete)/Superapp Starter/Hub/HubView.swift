@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct HubView: View {
+    @EnvironmentObject var auth: AuthViewModel
     
-    private let apps: [MiniApp] = [
+    @State private var apps: [MiniApp] = [
         MiniApp(
             id: "directory",
             name: "Directory",
@@ -55,6 +56,13 @@ struct HubView: View {
                     isMultiColumn.toggle()
                 } label: {
                     Image(systemName: isMultiColumn ? "rectangle.grid.1x2.fill" : "square.grid.2x2.fill")
+                }
+            }
+        }
+        .onAppear {
+            if (!auth.userProfile.roles.contains("Sales")) {
+                if let expId = apps.firstIndex(where: {$0.id == "expenses"}) {
+                    apps.remove(at: expId)
                 }
             }
         }

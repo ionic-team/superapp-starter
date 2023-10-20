@@ -22,7 +22,7 @@ struct MiniAppView: View {
     var body: some View {
         VStack {
             PortalView(
-                portal: .create(from: selectedApp, with: auth.userCreds!) { @MainActor in
+                portal: .create(from: selectedApp, with: auth.userCreds) { @MainActor in
                     hideTabBar.toggle()
                     dismiss()
                 }

@@ -5,11 +5,11 @@ title: 'Introduction to Superapps'
 
 # Introduction to superapps
 
-Superapps are defined as applications that provide end users, be it employees, partners, or customers, with access to independently created mini apps. These mini apps are unified under a single umbrella application, so users don’t need to hop between digital experiences. The core application contains essential functionality, such as authentication and payments, while the mini apps can add on needed features.
+Superapps are applications that provide end users—be it internal workforce or external customers—with access to a collection of independently created experiences called mini apps. These mini apps are unified under a single umbrella application, so users don’t need to hop between digital experiences. The core native application contains essential functionality, such as authentication and payments, while the mini apps can add on needed features—like an employee recognition service or an expenses portal.
 
-In some cases, this can mean having an app directory within the app. In other cases, the workflow between apps can be much more seamless.
+The mini apps can be accessed from an app directory within the app. In other cases, the apps can be accessed through specific user profiles and job function.
 
-We don’t think that the “super” in superapps necessarily means that you need to have an in-app app store with thousands of apps to download. Instead, superapps allow the user to have one single app that shapes their experience for that specific company or brand, regardless of whether it’s a consumer superapp or a workplace superapp.
+The “super” in superapp doesn’t refer to the quantity of mini apps offered in the larger app. Instead, superapps allow the user to have one single app that shapes their experience for that specific company or brand, regardless of whether it’s a consumer superapp or a workplace superapp.
 
 <!-- ## Real-world superapps
 
