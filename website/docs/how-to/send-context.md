@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Send Context'
+sidebar_label: 'Send Context to Mini App'
 ---
 
 # Send context data to mini app
@@ -66,7 +66,7 @@ With the `Portal` creation function accepting credentials to be sent as part of 
       VStack {
         PortalView(
 -         portal: .create(from: selectedApp) { @MainActor in
-+         portal: .create(from: selectedApp, with: auth.userCreds!) { @MainActor in
++         portal: .create(from: selectedApp, with: auth.userCreds) { @MainActor in
             hideTabBar.toggle()
             dismiss()
           }

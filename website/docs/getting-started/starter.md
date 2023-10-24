@@ -59,6 +59,10 @@ Packages:
 
 - **IonicPortals** - This package is pre-loaded and brings with it essential libraries that will be used throughout the walkthrough.
 
-### Mini app
+### Mini apps
 
-The React mini application, entitled **Kudos**, is a fully fleshed-out web application leveraging Ionic React. The intent of the app is to simulate one of the many workplace apps that an organization may embed within their superapp. Kudos allows employees to recognize their colleagues for their efforts. In a real-world application, employees could then translate their Kudos points into some type of reward. It could be a gift card, a donation to a charity, additional PTO, etc.
+**Directory** - Vue mini application using Ionic Vue. The purpose of the app is to replicate an employee directory where colleagues can find contact information for others within their organization.
+
+**Kudos** - React mini application leveraging Ionic React. The intent of the app is to simulate one of the many workplace apps that an organization may embed within their superapp. Kudos allows employees to recognize their colleagues for their efforts. In a real-world application, employees could then translate their Kudos points into some type of reward. It could be a gift card, a donation to a charity, additional PTO, etc.
+
+**Expenses** - Angular mini application using Ionic Angular. This app serves to demonstrate an expenses application where users would log in and log purchases that they'd like to be reimbursed for. This includes not just merchant name, cost, category, etc., but the ability to take a picture of the receipt and upload that as well.

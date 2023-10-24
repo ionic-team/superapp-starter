@@ -42,9 +42,9 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Connect',
+      label: 'How To',
       collapsed: false,
-      items: ['connect/send-context'],
+      items: ['how-to/send-context', 'how-to/toggle-visibility'],
     },
     {
       type: 'category',
