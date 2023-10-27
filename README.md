@@ -31,11 +31,11 @@ Once built, the mini apps will be pulled into the iOS project automatically (via
 ## Auth Info
 
 To log into the **completed** Ionic Superapp Starter, use the following credentials when prompted with the Auth0 login page:
-| username | password | role |
+| username | password | role(s) |
 |------- | -------- | ------ |
 | user@superapp.com | ionic | contractor
-| manager@superapp.com | ionic | manager 
-| admin@superapp.com | ionic | admin
+| manager@superapp.com | ionic | manager, sales 
+| admin@superapp.com | ionic | admin, sales
 
 ## Tutorial
 
