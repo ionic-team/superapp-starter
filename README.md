@@ -6,9 +6,12 @@ A showcase app of Ionic's Superapp SDK which includes the following technologies
 - [Appflow](https://ionic.io/appflow)
 - [Portals](https://ionic.io/portals)
 
-| <img src="https://github.com/ionic-team/superapp-starter/assets/7469758/965bcc8b-1613-4954-ab23-916e719f501b" width="350" alt="Ionic Superapp Starter Login View Screenshot on iOS" /> | <img src="https://github.com/ionic-team/superapp-starter/assets/7469758/21c843a1-e192-4af2-b61d-464ebdfc94a8" width="350" alt="Ionic Superapp Starter Hub View Screenshot on iOS" /> | 
+| <img src="./website/static/img/superapp_login_view.png" width="350" alt="Ionic Superapp Starter Login View Screenshot on iOS" /> | <img src="./website/static/img/superapp_hub_view.png" width="350" alt="Ionic Superapp Starter Hub View Screenshot on iOS" /> | 
 |:---:|:---:|
 | [Login View](https://github.com/ionic-team/superapp-starter/blob/main/ios%20(complete)/Superapp%20Starter/Login/LoginView.swift) | [Hub View](https://github.com/ionic-team/superapp-starter/blob/main/ios%20(complete)/Superapp%20Starter/Hub/HubView.swift) |
+| <img src="./website/static/img/superapp_mini_app_view.png" width="350" alt="Ionic Superapp Starter Mini App View Screenshot on iOS" /> | <img src="./website/static/img/superapp_demo.gif" width="350" alt="Ionic Superapp Starter Demo on iOS" /> | 
+| [Mini App View](https://github.com/ionic-team/superapp-starter/blob/main/ios%20(complete)/Superapp%20Starter/Hub/MiniApp/MiniAppView.swift) | Superapp Demo |
+
 
 ## How to Run
 > Note: Running the iOS app requires an [Ionic Portals Key](https://ionic.io/docs/portals/getting-started#using-your-product-key).
