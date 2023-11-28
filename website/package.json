@@ -18,7 +18,7 @@
   "dependencies": {
     "@docusaurus/core": "^2.4.3",
     "@ionic/prettier-config": "^2.0.0",
-    "@ionic-docs/preset-classic": "0.0.18",
+    "@ionic-docs/preset-classic": "0.0.19",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.2.1",
     "prism-react-renderer": "^1.3.1",
