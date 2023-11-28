@@ -67,8 +67,6 @@ const config = {
             alt: 'Superapp Starter Logo',
             src: 'img/components/product-dropdown/logo-light.png',
             srcDark: 'img/components/product-dropdown/logo-dark.png',
-            href: `https://ionic.io/docs/appflow`,
-            target: '_self',
           },
           textLinks: [
             {
