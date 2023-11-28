@@ -16,21 +16,18 @@
     "format": "prettier '**/*' --w"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.4",
-    "@docusaurus/preset-classic": "2.0.0-beta.4",
-    "@ionic-internal/docusaurus-plugin-tag-manager": "2.0.0",
-    "@ionic-internal/docusaurus-theme": "^3.0.5",
+    "@docusaurus/core": "^2.4.3",
     "@ionic/prettier-config": "^2.0.0",
+    "@ionic-docs/preset-classic": "0.0.19",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.2.1",
-    "docusaurus-plugin-sass": "^0.2.2",
     "prism-react-renderer": "^1.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "prettier": "@ionic/prettier-config",
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.4.1",
+    "@docusaurus/module-type-aliases": "^2.4.3",
     "@tsconfig/docusaurus": "^1.0.5",
     "typescript": "^4.7.4"
   },

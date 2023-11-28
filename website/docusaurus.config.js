@@ -17,18 +17,15 @@ const config = {
   favicon: 'img/favicon-32x32.png',
   organizationName: 'ionic-team',
   projectName: 'superapp-starter',
-  plugins: ['@ionic-internal/docusaurus-plugin-tag-manager', 'docusaurus-plugin-sass'],
-  themes: ['@ionic-internal/docusaurus-theme'],
   presets: [
     [
-      '@docusaurus/preset-classic',
+      '@ionic-docs/preset-classic',
       {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/ionic-team/superapp-starter/tree/main/website/',
         },
-        blog: false,
         pages: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -37,16 +34,22 @@ const config = {
     ],
   ],
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    /** @type {import('@ionic-docs/preset-classic').ThemeConfig} */
     ({
+      logo: {
+        alt: 'Ionic Logo',
+        src: '/img/logo-light.png',
+        srcDark: '/img/logo-dark.png',
+        width: 178,
+        height: 24,
+      },
       // Replace with your project's social card
       navbar: {
-        title: 'Ionic Superapp Starter',
-        logo: {
-          alt: 'Ionic Logo',
-          src: 'https://images.prismic.io/ionicframeworkcom/66cfdbef-e59d-463a-8e24-12cb233e9d97_ionic+logo+blue.png',
-        },
         items: [
+          {
+            type: 'search',
+            position: 'right',
+          },
           {
             type: 'doc',
             docId: 'overview',
@@ -55,10 +58,47 @@ const config = {
           },
         ],
       },
+      sidebar: {
+        productDropdown: {
+          title: 'Superapp Starter Docs',
+          logo: {
+            width: 23,
+            height: 20,
+            alt: 'Superapp Starter Logo',
+            src: 'img/components/product-dropdown/logo-light.png',
+            srcDark: 'img/components/product-dropdown/logo-dark.png',
+          },
+          textLinks: [
+            {
+              url: {
+                href: 'https://forum.ionicframework.com',
+                target: '_blank',
+                rel: 'noopener nofollow',
+              },
+              label: 'Forum',
+            },
+          ],
+          iconLinks: [
+            {
+              key: 'github',
+              url: {
+                href: 'https://github.com/ionic-team/superapp-starter',
+                target: '_blank',
+                rel: 'noopener nofollow',
+              },
+            },
+          ],
+        },
+        backButton: {
+          url: {
+            href: '/docs',
+          },
+        },
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: [],
+        additionalLanguages: ['swift'],
       },
       colorMode: {
         respectPrefersColorScheme: true,
