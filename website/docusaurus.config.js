@@ -20,8 +20,10 @@ const config = {
   presets: [
     [
       '@ionic-docs/preset-classic',
-      {
+      /** @type {import('@ionic-docs/preset-classic').Options} */
+      ({
         docs: {
+          breadcrumbs: false,
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/ionic-team/superapp-starter/tree/main/website/',
@@ -30,7 +32,10 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      },
+        googleTagManager: {
+          containerId: 'GTM-TKMGCBC',
+        },
+      }),
     ],
   ],
   themeConfig:
@@ -102,9 +107,6 @@ const config = {
       },
       colorMode: {
         respectPrefersColorScheme: true,
-      },
-      tagManager: {
-        trackingID: 'GTM-TKMGCBC',
       },
     }),
 };
