@@ -6,7 +6,7 @@ sidebar_label: 'Portals'
 
 One of the underlying pieces of Ionic’s Superapp SDK and what allows it to work is **Portals**.
 
-Portals is a supercharged native WebView component for iOS and Android that lets you add web-based experiences to native mobile apps. It enables native and web teams to better collaborate and bring new and existing web experiences to mobile in a safe, controlled way.
+[Portals](https://ionic.io/portals) is a supercharged native WebView component for iOS and Android that lets you add web-based experiences to native mobile apps. It enables native and web teams to better collaborate and bring new and existing web experiences to mobile in a safe, controlled way.
 
 For this lab, we’ll be taking advantage of Portals to safely embed our mini app experience into the core app.
 
@@ -40,9 +40,9 @@ struct SuperappStarterApp: App {
   }
 
   var body: some Scene {
-      WindowGroup {
-        AppView()
-      }
+    WindowGroup {
+      AppView()
+    }
   }
 }
 ```

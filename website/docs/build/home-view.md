@@ -22,11 +22,11 @@ You’ll see `FeedKit` in the result set. Setup your dependency rule and then se
 import Foundation
 
 struct FeedItem: Identifiable {
-    let id = UUID()
-    let title: String
-    let author: String
-    let pubDate: String
-    let link: String
+  let id = UUID()
+  let title: String
+  let author: String
+  let pubDate: String
+  let link: String
 }
 ```
 

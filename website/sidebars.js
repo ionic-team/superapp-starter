@@ -24,7 +24,7 @@ const sidebars = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: ['overview', 'getting-started/starter', 'getting-started/portals-intro', 'getting-started/architecture'],
+      items: ['getting-started/starter', 'getting-started/portals-intro', 'getting-started/architecture'],
     },
     {
       type: 'category',

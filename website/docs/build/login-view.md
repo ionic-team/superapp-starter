@@ -66,16 +66,16 @@ You'll notice that many of the accompanying child views have additional padding 
 
 In the previous section you'll notice a comment within the `Button` that identifies the need to add code to trigger the authentication flow. For this, we'll be referencing the previously built `login()` function in the `AuthViewModel`. In order to leverage an instance of the `AuthViewModel`, which we'll name `auth`, we need to inject it using a property wrapper called `@EnvironmentObject`.
 
-```swift title="ios/Superapp Starter/Login/LoginView.swift"
-import SwiftUI
+```diff title="ios/Superapp Starter/Login/LoginView.swift"
+  import SwiftUI
 
-struct LoginView: View {
+  struct LoginView: View {
 
-  @EnvironmentObject var auth: AuthViewModel
++   @EnvironmentObject var auth: AuthViewModel
 
-  var body: some View { ... }
+    var body: some View { ... }
 
-}
+  }
 ```
 
 With `auth` declared, we can access the assosciated `login()` function that we need within the button.
@@ -83,19 +83,16 @@ With `auth` declared, we can access the assosciated `login()` function that we n
 ```diff title="ios/Superapp Starter/Login/LoginView.swift"
   import SwiftUI
 
-
   struct LoginView: View {
 
-+   @EnvironmentObject var auth: AuthViewModel
-
+    @EnvironmentObject var auth: AuthViewModel
 
     var body: some View {
       VStack {
         ...
 
-
         Button {
-+           auth.login()
++         auth.login()
         } label: {
           Text("Log in")
             ...

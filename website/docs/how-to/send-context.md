@@ -20,25 +20,22 @@ These updates look as follows:
   extension Portal {
 +     private static let encoder = JSONEncoder()
 
-
 -     static func create(from selectedApp: MiniApp, dismiss: @escaping () async -> Void) -> Portal {
 +     static func create(from selectedApp: MiniApp, with credentials: Creds, dismiss: @escaping () async -> Void) -> Portal {
-+         let creds = (try? encoder.encodeJsObject(credentials)) ?? [:]
-          var initialContext: [String: JSValue] = [
--              "auth0": [:]
-+              "auth0": creds
-          ]
++       let creds = (try? encoder.encodeJsObject(credentials)) ?? [:]
+        var initialContext: [String: JSValue] = [
+-          "auth0": [:]
++          "auth0": creds
+        ]
 
+        initialContext["resourceId"] = selectedApp.id
 
-          initialContext["resourceId"] = selectedApp.id
-
-
-          return Portal(
-              name: selectedApp.id,
-              startDir: "portals/\(selectedApp.id)",
-              initialContext: initialContext
-          )
-          .adding(Dismiss(dismiss: dismiss))
+        return Portal(
+          name: selectedApp.id,
+          startDir: "portals/\(selectedApp.id)",
+          initialContext: initialContext
+        )
+        .adding(Dismiss(dismiss: dismiss))
       }
   }
 ```
@@ -53,14 +50,11 @@ With the `Portal` creation function accepting credentials to be sent as part of 
 +   @EnvironmentObject var auth: AuthViewModel
     @State private var hideTabBar = true
 
-
     let selectedApp: MiniApp
-
 
     init(app: MiniApp) {
       self.selectedApp = app
     }
-
 
     var body: some View {
       VStack {

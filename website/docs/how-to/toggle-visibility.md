@@ -150,20 +150,16 @@ With the `HubView` in charge of displaying the mini apps we need to update some 
   struct HubView: View {
 +   @EnvironmentObject var auth: AuthViewModel
 
-
 -   private let apps: [MiniApp] = [
 +   @State private var apps: [MiniApp] = [
       ...
     ]
 
-
     @State private var isMultiColumn: Bool = false
-
 
     private var numberColumns: [GridItem] {
       Array(repeating: GridItem(.flexible()), count: isMultiColumn ? 2 : 1)
     }
-
 
     var body: some View { ... }
   }

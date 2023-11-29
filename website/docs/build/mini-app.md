@@ -83,9 +83,9 @@ In our case, the embedded web apps will be added to a `/portals` directory as di
 # Type a script or drag a script file from your workspace to insert its path.
 EMBEDDED_DIR="${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app/portals"
 APP_LIST=(
-    "directory|/../web/directory/dist"
-    "kudos|/../web/kudos/dist"
-    "expenses|/../web/expenses/www"
+  "directory|/../web/directory/dist"
+  "kudos|/../web/kudos/dist"
+  "expenses|/../web/expenses/www"
 )
 
 echo "App ${TARGET_NAME} is being copied! ${EMBEDDED_APP}";
@@ -143,9 +143,9 @@ Altogether we have a complete script to take each mini app (web application) and
 # Type a script or drag a script file from your workspace to insert its path.
 EMBEDDED_DIR="${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app/portals"
 APP_LIST=(
-    "directory|/../web/directory/dist"
-    "kudos|/../web/kudos/dist"
-    "expenses|/../web/expenses/www"
+  "directory|/../web/directory/dist"
+  "kudos|/../web/kudos/dist"
+  "expenses|/../web/expenses/www"
 )
 
 echo "App ${TARGET_NAME} is being copied! ${EMBEDDED_APP}";

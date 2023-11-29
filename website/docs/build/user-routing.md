@@ -16,16 +16,13 @@ Before we update the `AppView` we need to update our entry point, `SuperappStart
   import SwiftUI
   import IonicPortals
 
-
   @main
   struct SuperappStarterApp: App {
 +   @StateObject var auth = AuthViewModel()
 
-
     init() {
       PortalsRegistrationManager.shared.register(key: "YOUR_KEY_HERE")
     }
-
 
     var body: some Scene {
       WindowGroup {
@@ -45,18 +42,15 @@ import IonicPortals
 struct SuperappStarterApp: App {
   @StateObject var auth = AuthViewModel()
 
-
   init() {
     PortalsRegistrationManager.shared.register(key: "YOUR_KEY_HERE")
   }
 
-
   var body: some Scene {
-      WindowGroup {
-        AppView()
-+            .environmentObject(auth)
-
-      }
+    WindowGroup {
+      AppView()
++       .environmentObject(auth)
+    }
   }
 }
 ```
@@ -69,11 +63,11 @@ With the necessary authentication logic in place we can update how `AppView` man
 import SwiftUI
 
 struct AppView: View {
-    @EnvironmentObject var auth: AuthViewModel
+  @EnvironmentObject var auth: AuthViewModel
 
-    var body: some View {
-      LoginView()
-    }
+  var body: some View {
+    LoginView()
+  }
 }
 ```
 
@@ -83,13 +77,13 @@ Let's update the `body` with a `Group` where if the user is authenticated, they 
 
 ```swift title="ios/Superapp Starter/App/AppView.swift"
 var body: some View {
-    Group {
-        if self.auth.isAuthenticated {
-            TabsView()
-        } else {
-            LoginView()
-        }
+  Group {
+    if self.auth.isAuthenticated {
+      TabsView()
+    } else {
+      LoginView()
     }
+  }
 }
 ```
 
@@ -103,9 +97,9 @@ When an authenticated user is directed into the main app experience they'll be p
 import SwiftUI
 
 struct TabsView: View {
-    var body: some View {
-        TabView { ... }
-    }
+  var body: some View {
+    TabView { ... }
+  }
 }
 ```
 
@@ -113,20 +107,20 @@ Inside the `TabView`, we define three tabs: **Home Tab (`HomeView`)**, **Hub Tab
 
 ```swift title="ios/Superapp Starter/Tabs/TabsView.swift"
 TabView {
-    HomeView()
-        .tabItem {
-            Label("Home", systemImage: "house")
-        }
+  HomeView()
+    .tabItem {
+      Label("Home", systemImage: "house")
+    }
 
-    HubView()
-        .tabItem {
-            Label("Hub", systemImage: "square.grid.3x3")
-        }
+  HubView()
+    .tabItem {
+      Label("Hub", systemImage: "square.grid.3x3")
+    }
 
-    ProfileView()
-        .tabItem {
-            Label("Profile", systemImage: "person")
-        }
+  ProfileView()
+    .tabItem {
+      Label("Profile", systemImage: "person")
+    }
 }
 ```
 
